@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    android:id="@+id/fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="6dp"
+    tools:context=".FragmentButtons">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton2"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B1"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B2"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cardButton1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardButton5"
+            app:layout_constraintBottom_toTopOf="@id/cardButton4"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B3"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardButton6"
+            app:layout_constraintStart_toEndOf="@id/cardButton2"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton3"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B4"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton7"
+            app:layout_constraintStart_toEndOf="@id/cardButton3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton6"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B5"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton4"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton5"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B6"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cardButton5"
+            app:layout_constraintEnd_toStartOf="@id/cardButton9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton8"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B7"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton6"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton7"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B8"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton10"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B9"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton8"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton9"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/id_button10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:text="B10"
+                android:elevation="10dp"
+                android:textColor="@color/main_color"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/name_sample_button10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="10dp"
+                android:text="Name sample"
+                android:textAllCaps="false"
+                android:textColor="@color/main_color"
+                android:backgroundTint="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/check_button10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:textSize="60sp"
+                android:text="_"
+                android:elevation="10dp"
+                android:textColor="@color/red_error"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
