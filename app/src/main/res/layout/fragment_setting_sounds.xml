@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentSettingSounds"
+    android:padding="6dp"
+    android:id="@+id/LayoutFragmentSettingSounds">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton2"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton1"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton1"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton1"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton1">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton1"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton1"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton1"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton1"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton1"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton1"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton1"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton1">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton1"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton2"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton2"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton2"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton2">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton2"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton2"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton2"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton2"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton2"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton2"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton2"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton2">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton2"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cardButton1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardButton5"
+            app:layout_constraintBottom_toTopOf="@id/cardButton4"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton3"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton3"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton3"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton3"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton3">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton3"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton3"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton3"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton3"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton3"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton3"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton3"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton3">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton3"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardButton6"
+            app:layout_constraintStart_toEndOf="@id/cardButton2"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton3"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton4"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton4"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton4"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton4"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton4">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton4"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton4"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton4"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton4"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton4"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton4"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton4"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton4">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton4"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton7"
+            app:layout_constraintStart_toEndOf="@id/cardButton3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton6"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton5"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton5"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton5"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton5"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton5">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton5"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton5"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton5"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton5"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton5"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton5"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton5"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton5">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton5"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton5"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton4"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton5"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton6"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton6"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton6"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton6"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton6">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton6"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton6"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton6"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton6"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton6"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton6"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton6"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton6">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton6"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cardButton5"
+            app:layout_constraintEnd_toStartOf="@id/cardButton9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardButton8"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton7"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton7"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton7"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton7"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton7">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton7"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton7"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton7"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton7"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton7"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton7"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton7"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton7">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton7"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton7"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/cardButton10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton6"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton7"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton8"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton8"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton8"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton8"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton8">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton8"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton8"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton8"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton8"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton8"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton8"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton8"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton8">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton8"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton8"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:backgroundTint="@color/base_color"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/cardButton10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton9"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton9"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton9"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton9"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton9">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton9"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton9"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton9"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton9"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton9"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton9"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton9"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton9">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton9"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton9"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardButton10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardButton8"
+            app:layout_constraintTop_toBottomOf="@+id/cardButton9"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:backgroundTint="@color/base_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sampleNameButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconVolButton10"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_volume"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton10"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarVolButton10"
+                    app:layout_constraintStart_toStartOf="@+id/seekBarVolButton10"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton10">
+
+                </ImageView>
+
+                <SeekBar
+                    android:id="@+id/seekBarVolButton10"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:progress="38"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sampleNameButton10"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/volButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="38%"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton10"
+                    app:layout_constraintEnd_toEndOf="@+id/seekBarVolButton10"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarVolButton10"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarVolButton10"
+                    tools:ignore="SmallSp,SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/insertSoundButton10"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_insert_sound"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/extraSettingButton10">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/extraSettingButton10"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/main_color"
+                    android:rotation="270"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton10"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </ImageButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

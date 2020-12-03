@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class FragmentButtons : Fragment() {
+class FragmentSettingSounds : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
 
-        val viewFragment = inflater.inflate(R.layout.fragment_buttons, container, false)
+        val viewFragment = inflater.inflate(R.layout.fragment_setting_sounds, container, false)
 
         return viewFragment
     }
