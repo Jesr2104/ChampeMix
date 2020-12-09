@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <ImageButton
         android:id="@+id/insert_sound"
@@ -18,6 +18,19 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_insert_sound" />
+
+    <TextView
+        android:id="@+id/name_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music name"
+        android:textSize="8dp"
+        android:textStyle="bold"
+        tools:ignore="SpUsage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bar_sound_time"
+        app:layout_constraintStart_toStartOf="@id/bar_sound_time"
+        app:layout_constraintEnd_toEndOf="@id/bar_sound_time"/>
 
     <SeekBar
         android:id="@+id/bar_sound_time"
