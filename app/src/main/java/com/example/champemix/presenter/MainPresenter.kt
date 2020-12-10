@@ -1,14 +1,14 @@
 package com.example.champemix.presenter
 
 import android.content.Context
-import android.media.MediaMetadataRetriever
+import android.content.Intent
 import android.media.MediaPlayer
-import com.example.champemix.R
 
 class MainPresenter {
 
     private var view: View? = null
-    private var player = MediaPlayer()
+    private var start = true
+
 
     interface View{
         fun runningSound()
@@ -27,25 +27,38 @@ class MainPresenter {
 
     fun playerSound(context: Context){
 
+        val intent = Intent(context, PlayerService::class.java)
+
+        start =
+            if (start){
+                context.startService(intent)
+                false
+            } else {
+                context.stopService(intent)
+                true
+            }
+
+
+
         // this is missing to be create inside of service
-        var totalTime = 0
+//        var totalTime = 0
 
-        player = MediaPlayer.create(context, R.raw.ensename_a_olvidar)
-        player.isLooping = true
-        player.setVolume(0.5f, 0.5f)
-        totalTime = player.duration
+//        player = MediaPlayer.create(context, R.raw.ensename_a_olvidar)
+//        player.isLooping = true
+//        player.setVolume(0.9f, 0.9f)
+//        totalTime = player.duration
 
-        if (player.isPlaying){
-            player.pause()
-        } else {
-            player.start()
-        }
+//        if (player.isPlaying){
+//            player.pause()
+//        } else {
+//            player.start()
+//        }
         
 
-        view!!.nameSound("no yet")
-        view!!.currentPosition(player.currentPosition)
-        view!!.runningSound()
-        view!!.durationSound(totalTime)
+//        view!!.nameSound("Enseñame a olvidarte - ")
+//        view!!.currentPosition(player.currentPosition)
+//        view!!.runningSound()
+//        view!!.durationSound(totalTime)
 
     }
 }
