@@ -13,4 +13,6 @@
     <color name="base_color">#E9E9E9</color>
     <color name="red_error">#FF3D3E</color>
     <color name="green_error">#12FF13</color>
+    <color name="Accept">#008f55</color>
+
 </resources>

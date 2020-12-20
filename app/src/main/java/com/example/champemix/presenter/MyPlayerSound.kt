@@ -16,13 +16,13 @@ class MyPlayerSound {
     init {
         player = SoundPool.Builder()
             .setAudioAttributes(attributes)
-            .setMaxStreams(30)
+            .setMaxStreams(60)
             .build()
     }
 
     fun playSound(resource: Int, context: Context) {
 
-        val volume = 0.05f
+        val volume = 1.0f
         player!!.load(context, resource, 1)
 
         player!!.setOnLoadCompleteListener { soundPool, sampleId, _ ->
@@ -30,9 +30,9 @@ class MyPlayerSound {
                 sampleId,
                 volume,
                 volume,
+                1,
                 0,
-                0,
-                0f
+                1f
             )
         }
     }

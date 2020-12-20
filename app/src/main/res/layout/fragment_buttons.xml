@@ -38,7 +38,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B1"
+                android:text="֍ B1"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -66,6 +66,33 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -95,7 +122,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B2"
+                android:text="֍ B2"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -123,6 +150,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -152,7 +205,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B3"
+                android:text="֍ B3"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -180,6 +233,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -209,7 +288,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B4"
+                android:text="֍ B4"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -237,6 +316,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -266,7 +371,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B5"
+                android:text="֍ B5"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -294,6 +399,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -323,7 +454,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B6"
+                android:text="֍ B6"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -351,6 +482,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -380,7 +537,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B7"
+                android:text="֍ B7"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -408,6 +565,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -437,7 +620,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B8"
+                android:text="֍ B8"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -465,6 +648,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -494,7 +703,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B9"
+                android:text="֍ B9"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -522,6 +731,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -551,7 +786,7 @@
                 android:layout_marginEnd="10dp"
                 android:gravity="end"
                 android:textSize="20sp"
-                android:text="B10"
+                android:text="֍ B10"
                 android:elevation="10dp"
                 android:textColor="@color/main_color"
                 android:textStyle="bold|italic"/>
@@ -579,6 +814,32 @@
                 android:elevation="10dp"
                 android:textColor="@color/red_error"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/timeButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T: 0.30s"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:id="@+id/volume_Button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol. 55%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15dp"
+                android:elevation="10dp"/>
 
         </androidx.cardview.widget.CardView>
 

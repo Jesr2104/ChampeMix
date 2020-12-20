@@ -1,7 +1,5 @@
 package com.example.champemix.presenter
 
-import android.content.Context
-
 class MainPresenter {
 
     private var view: View? = null
@@ -15,9 +13,5 @@ class MainPresenter {
 
     fun onDestroy() {
         this.view = null
-    }
-
-    fun playerSound(context: Context) {
-
     }
 }

@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                 true
             }
         }
-
         //==================================================================================
     }
 
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         }
     }
 
-    // function to hide the navegationBar and statusBar and leave float
+    // function to hide the navigationBar and statusBar and leave float
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) {
