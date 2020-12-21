@@ -9,6 +9,7 @@ class ButtonsPresenter {
 
     private var view: View? = null
     private var soundsResources: ArrayList<String> = arrayListOf()
+    private var soundsVolume: ArrayList<Float> = arrayListOf()
 
     interface View{
         fun loadData(data: ArrayList<SoundButton>)
@@ -28,6 +29,7 @@ class ButtonsPresenter {
         // load the sounds to be ready to player
         data.forEach{
             soundsResources.add(it.resource)
+            soundsVolume.add(it.volume)
         }
 
         // we send the information to the view to update the data
@@ -44,16 +46,16 @@ class ButtonsPresenter {
         val idResource = context.resources.getIdentifier(soundsResources[numberSound], "raw", context.packageName)
 
         when (numberSound){
-            0 -> {player.playSound(idResource, context)}
-            1 -> {player.playSound(idResource, context)}
-            2 -> {player.playSound(idResource, context)}
-            3 -> {player.playSound(idResource, context)}
-            4 -> {player.playSound(idResource, context)}
-            5 -> {player.playSound(idResource, context)}
-            6 -> {player.playSound(idResource, context)}
-            7 -> {player.playSound(idResource, context)}
-            8 -> {player.playSound(idResource, context)}
-            9 -> {player.playSound(idResource, context)}
+            0 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            1 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            2 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            3 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            4 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            5 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            6 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            7 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            8 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
+            9 -> {player.playSound(idResource, context, soundsVolume[numberSound])}
         }
     }
 }

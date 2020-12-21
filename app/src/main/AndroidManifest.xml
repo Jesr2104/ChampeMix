@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChampeMix">
+        <activity android:name=".view.SoundListActivity"></activity>
+
         <service
             android:name=".presenter.PlayerService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
 
         <activity android:name=".view.MainActivity">
             <intent-filter>

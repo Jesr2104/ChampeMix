@@ -27,10 +27,6 @@ class DataSounds {
         editMe.apply()
     }
 
-    fun setData(data: ArrayList<SoundButton>){
-        setList(data)
-    }
-
     fun getList(): ArrayList<SoundButton>? {
         val fooType: Type = object : TypeToken<ArrayList<SoundButton>>() {}.type
         if (dataSharePreference?.contains("dataSoundsConfig")!!) {
@@ -40,8 +36,8 @@ class DataSounds {
         return null
     }
 
-    private inline fun <reified T : SoundButton> setList(newData: ArrayList<T>) {
-        val fooType: Type = object : TypeToken<ArrayList<SoundButton>?>() {}.type
+    fun setList(newData: ArrayList<SoundButton>) {
+        val fooType: Type = object : TypeToken<ArrayList<SoundButton>>() {}.type
         val json = gSonInstance.toJson(newData,fooType)
         dataSharePreference?.editMe {
             it.putString("dataSoundsConfig", json)

@@ -33,7 +33,7 @@ class DefaultConfiguration(context: Context) {
             listButtons.add(soundButton)
             i++
         }
-        DataSounds().customPreference(context).setData(listButtons)
+        DataSounds().customPreference(context).setList(listButtons)
     }
 }
 

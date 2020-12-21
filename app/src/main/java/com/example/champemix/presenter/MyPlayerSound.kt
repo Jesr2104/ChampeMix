@@ -20,9 +20,8 @@ class MyPlayerSound {
             .build()
     }
 
-    fun playSound(resource: Int, context: Context) {
+    fun playSound(resource: Int, context: Context, volume: Float) {
 
-        val volume = 1.0f
         player!!.load(context, resource, 1)
 
         player!!.setOnLoadCompleteListener { soundPool, sampleId, _ ->
