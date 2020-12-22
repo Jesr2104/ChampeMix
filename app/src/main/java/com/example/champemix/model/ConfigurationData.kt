@@ -7,12 +7,12 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
 
-class DataSounds {
+class ConfigurationData {
     private val gSonInstance = Gson()
     private var dataSharePreference: SharedPreferences? = null
 
     // this functions create the object of the Shared preference
-    fun customPreference(context: Context): DataSounds {
+    fun customPreference(context: Context): ConfigurationData {
         if (dataSharePreference == null)
             dataSharePreference = context.getSharedPreferences(
                 "dataSoundsConfig",

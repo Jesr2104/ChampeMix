@@ -157,7 +157,7 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
         })
 
         binding.insertSoundButton1.setOnClickListener {
-            val soundList = Intent(context, SoundListActivity::class.java)
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
             soundList.putExtra("ButtonNumber",1)
             startActivity(soundList)
         }

@@ -2,7 +2,7 @@ package com.example.champemix.utility
 
 import android.content.Context
 import com.example.champemix.R
-import com.example.champemix.model.DataSounds
+import com.example.champemix.model.ConfigurationData
 
 class DefaultConfiguration(context: Context) {
     init {
@@ -25,15 +25,15 @@ class DefaultConfiguration(context: Context) {
             val soundButton = SoundButton()
             val nameResource = context.resources.getResourceEntryName(soundsResource[i])
 
-            soundButton.titleSound = GetData().getTitle(context,soundsResource[i])
-            soundButton.duration = GetData().getDuration(context,soundsResource[i])
+            soundButton.titleSound = GetMetadata().getTitle(context,soundsResource[i])
+            soundButton.duration = GetMetadata().getDuration(context,soundsResource[i])
             soundButton.volume = 0.75f
             soundButton.resource = nameResource
 
             listButtons.add(soundButton)
             i++
         }
-        DataSounds().customPreference(context).setList(listButtons)
+        ConfigurationData().customPreference(context).setList(listButtons)
     }
 }
 

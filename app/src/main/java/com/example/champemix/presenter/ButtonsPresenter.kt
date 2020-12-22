@@ -1,7 +1,8 @@
 package com.example.champemix.presenter
 
 import android.content.Context
-import com.example.champemix.model.DataSounds
+import com.example.champemix.model.ConfigurationData
+import com.example.champemix.presenter.tools.MyPlayerSound
 import com.example.champemix.utility.DefaultConfiguration
 import com.example.champemix.utility.SoundButton
 
@@ -19,11 +20,11 @@ class ButtonsPresenter {
         this.view = view
 
         // We read the configuration that is saved, if none is found, we will create one with the default configuration
-        var data = DataSounds().customPreference(context).getList()
+        var data = ConfigurationData().customPreference(context).getList()
 
         while (data == null){
             DefaultConfiguration(context)
-            data = DataSounds().customPreference(context).getList()!!
+            data = ConfigurationData().customPreference(context).getList()!!
         }
 
         // load the sounds to be ready to player

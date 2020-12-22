@@ -4,7 +4,7 @@ import android.content.Context
 import android.media.MediaMetadataRetriever
 import android.net.Uri
 
-class GetData{
+class GetMetadata{
     fun getDuration(context: Context, resource: Int): Int {
         var retriever: MediaMetadataRetriever? = null
         val path = Uri.parse("android.resource://${context.packageName}/${resource}")

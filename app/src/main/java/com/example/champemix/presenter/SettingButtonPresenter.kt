@@ -2,7 +2,7 @@ package com.example.champemix.presenter
 
 import android.content.Context
 import android.widget.Toast
-import com.example.champemix.model.DataSounds
+import com.example.champemix.model.ConfigurationData
 import com.example.champemix.utility.SoundButton
 
 class SettingButtonPresenter {
@@ -19,7 +19,7 @@ class SettingButtonPresenter {
         this.view = view
 
         // We read the configuration that is saved, if none is found, we will create one with the default configuration
-        val data = DataSounds().customPreference(context).getList()!!
+        val data = ConfigurationData().customPreference(context).getList()!!
 
         // Load the base information
         data.forEach {
@@ -39,12 +39,12 @@ class SettingButtonPresenter {
     }
 
     fun resetResource(idButton: Int, newValue: String){
-
+        println(newValue)
     }
 
     fun onDestroy(context: Context) {
         if(edited){
-            DataSounds().customPreference(context).setList(
+            ConfigurationData().customPreference(context).setList(
                 dataSetting)
             Toast.makeText(context, "successfully saved", Toast.LENGTH_SHORT).show()
         }
