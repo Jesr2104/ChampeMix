@@ -39,7 +39,7 @@ class SettingButtonPresenter {
     }
 
     fun resetResource(idButton: Int, newValue: String){
-        println(newValue)
+        //falta por definir sin funcionalidad
     }
 
     fun onDestroy(context: Context) {

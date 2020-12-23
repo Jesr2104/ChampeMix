@@ -1,5 +1,6 @@
 package com.example.champemix.view
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,9 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
         super.onCreate(savedInstanceState)
         binding = ActivityPickerSoundEffectBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // block the app orientation of the activity on Landscape
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
         // initialization of the presenter
         pickerSoundEffectPresenter.onCreate(this)

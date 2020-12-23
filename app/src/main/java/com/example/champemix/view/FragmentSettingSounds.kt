@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.champemix.R
 import com.example.champemix.databinding.FragmentSettingSoundsBinding
 import com.example.champemix.presenter.SettingButtonPresenter
 import com.example.champemix.utility.SoundButton
+
 
 class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
 
@@ -19,14 +22,16 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View {
+        savedInstanceState: Bundle?
+    ): View {
 
         binding = FragmentSettingSoundsBinding.inflate(layoutInflater)
 
         // initialization of the presenter
         settingButtonPresenter.onCreate(this, context!!.applicationContext)
 
-        binding.seekBarVolButton1.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton1.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -35,11 +40,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(0, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton2.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -48,11 +55,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(1, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton3.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton3.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -61,11 +70,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(2, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton4.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton4.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -74,11 +85,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(3, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton5.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton5.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -87,11 +100,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(4, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton6.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton6.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -100,11 +115,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(5, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton7.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton7.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -113,11 +130,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(6, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton8.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton8.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -126,11 +145,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(7, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton9.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton9.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -139,11 +160,13 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(8, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.seekBarVolButton10.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.seekBarVolButton10.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 settingButtonPresenter.edited()
@@ -152,14 +175,22 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
                 // we send to the presenter the new information to update
                 settingButtonPresenter.resetVolume(9, ((progress).toFloat() / 100))
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
         binding.insertSoundButton1.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
-            soundList.putExtra("ButtonNumber",1)
-            startActivity(soundList)
+//            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+//            soundList.putExtra("ButtonNumber", 1)
+//            startActivity(soundList)
+
+            binding.ConfigButton.visibility = View.INVISIBLE
+            val nuevoFragmento: Fragment = FragmentPickerSoundEffect()
+            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+            transaction.replace(R.id.FullScreen, nuevoFragmento)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
         return binding.root
@@ -180,52 +211,52 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
             val volume = item.volume
 
             when(i){
-                1 ->{
+                1 -> {
                     binding.sampleNameButton1.text = title
                     binding.seekBarVolButton1.progress = (volume * 100).toInt()
                     binding.volButton1.text = "${(volume * 100).toInt()}%"
                 }
-                2 ->{
+                2 -> {
                     binding.sampleNameButton2.text = title
                     binding.seekBarVolButton2.progress = (volume * 100).toInt()
                     binding.volButton2.text = "${(volume * 100).toInt()}%"
                 }
-                3 ->{
+                3 -> {
                     binding.sampleNameButton3.text = title
                     binding.seekBarVolButton3.progress = (volume * 100).toInt()
                     binding.volButton3.text = "${(volume * 100).toInt()}%"
                 }
-                4 ->{
+                4 -> {
                     binding.sampleNameButton4.text = title
                     binding.seekBarVolButton4.progress = (volume * 100).toInt()
                     binding.volButton4.text = "${(volume * 100).toInt()}%"
                 }
-                5 ->{
+                5 -> {
                     binding.sampleNameButton5.text = title
                     binding.seekBarVolButton5.progress = (volume * 100).toInt()
                     binding.volButton5.text = "${(volume * 100).toInt()}%"
                 }
-                6 ->{
+                6 -> {
                     binding.sampleNameButton6.text = title
                     binding.seekBarVolButton6.progress = (volume * 100).toInt()
                     binding.volButton6.text = "${(volume * 100).toInt()}%"
                 }
-                7 ->{
+                7 -> {
                     binding.sampleNameButton7.text = title
                     binding.seekBarVolButton7.progress = (volume * 100).toInt()
                     binding.volButton7.text = "${(volume * 100).toInt()}%"
                 }
-                8 ->{
+                8 -> {
                     binding.sampleNameButton8.text = title
                     binding.seekBarVolButton8.progress = (volume * 100).toInt()
                     binding.volButton8.text = "${(volume * 100).toInt()}%"
                 }
-                9 ->{
+                9 -> {
                     binding.sampleNameButton9.text = title
                     binding.seekBarVolButton9.progress = (volume * 100).toInt()
                     binding.volButton9.text = "${(volume * 100).toInt()}%"
                 }
-                10 ->{
+                10 -> {
                     binding.sampleNameButton10.text = title
                     binding.seekBarVolButton10.progress = (volume * 100).toInt()
                     binding.volButton10.text = "${(volume * 100).toInt()}%"
