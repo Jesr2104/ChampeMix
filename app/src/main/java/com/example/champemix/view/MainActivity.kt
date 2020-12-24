@@ -1,7 +1,9 @@
 package com.example.champemix.view
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.ActivityInfo
+import android.media.AudioManager
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,8 @@ import androidx.fragment.app.Fragment
 import com.example.champemix.R
 import com.example.champemix.databinding.ActivityMainBinding
 import com.example.champemix.presenter.MainPresenter
+import java.util.*
+import kotlin.concurrent.schedule
 
 class MainActivity : AppCompatActivity(), MainPresenter.View {
 
@@ -32,6 +36,8 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         val fragmentButtons = FragmentButtons()
         makeCurrentFragment(fragmentButtons)
 
+        updateVolume()
+
         //==================================================================================
         //     Event control
         //==================================================================================
@@ -47,12 +53,61 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                 true
             }
         }
+
+        binding.volumeUp.setOnClickListener {
+
+            val streamType = AudioManager.STREAM_MUSIC
+            val audioManager =
+                applicationContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+            binding.volumeUp.setColorFilter(resources.getColor(R.color.red_error))
+
+            Timer().schedule(50) {
+                binding.volumeUp.setColorFilter(resources.getColor(R.color.main_color))
+            }
+
+            audioManager.adjustStreamVolume(
+                streamType,
+                AudioManager.ADJUST_RAISE,
+                AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE
+            )
+
+            updateVolume()
+        }
+
+        binding.volumeDown.setOnClickListener {
+
+            val streamType = AudioManager.STREAM_MUSIC
+            val audioManager =
+                applicationContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+            binding.volumeDown.setColorFilter(resources.getColor(R.color.red_error))
+
+            Timer().schedule(50) {
+                binding.volumeDown.setColorFilter(resources.getColor(R.color.main_color))
+            }
+
+            audioManager.adjustStreamVolume(
+                streamType,
+                AudioManager.ADJUST_LOWER,
+                AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE
+            )
+            updateVolume()
+        }
+
         //==================================================================================
     }
 
-    override fun onDestroy() {
-        mainPresenter.onDestroy()
-        super.onDestroy()
+    // to update the current volume on the app
+    @SuppressLint("SetTextI18n")
+    private fun updateVolume() {
+        val audioManager =
+            applicationContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        val volumeLevel = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
+        val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+        val volume = volumeLevel.toFloat() / maxVolume
+
+        binding.valueVolume.text = "${(volume * 100).toInt()}%"
     }
 
     // function to change between Fragments
@@ -61,6 +116,11 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             replace(R.id.LayoutFragmentButtons, fragment)
             commit()
         }
+    }
+
+    override fun onDestroy() {
+        mainPresenter.onDestroy()
+        super.onDestroy()
     }
 
     // function to hide the navigationBar and statusBar and leave float

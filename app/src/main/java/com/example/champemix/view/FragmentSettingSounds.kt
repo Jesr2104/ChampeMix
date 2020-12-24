@@ -185,12 +185,12 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
 //            soundList.putExtra("ButtonNumber", 1)
 //            startActivity(soundList)
 
-            binding.ConfigButton.visibility = View.INVISIBLE
-            val nuevoFragmento: Fragment = FragmentPickerSoundEffect()
-            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-            transaction.replace(R.id.FullScreen, nuevoFragmento)
-            transaction.addToBackStack(null)
-            transaction.commit()
+//            binding.ConfigButton.visibility = View.INVISIBLE
+//            val nuevoFragmento: Fragment = FragmentPickerSoundEffect()
+//            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+//            transaction.replace(R.id.mainFragment, nuevoFragmento)
+//            transaction.addToBackStack(null)
+//            transaction.commit()
         }
 
         return binding.root
