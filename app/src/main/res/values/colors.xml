@@ -15,4 +15,12 @@
     <color name="green_error">#12FF13</color>
     <color name="Accept">#008f55</color>
 
+    <color name="color1">#445A7C</color>
+    <color name="color2">#5F9AE8</color>
+    <color name="color3">#5EDCFE</color>
+    <color name="color4">#4F5061</color>
+    <color name="color5">#9098E2</color>
+    <color name="color6">#CACDF5</color>
+
+
 </resources>

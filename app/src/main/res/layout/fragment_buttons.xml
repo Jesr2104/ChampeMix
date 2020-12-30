@@ -28,71 +28,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
-            <TextView
-                android:id="@+id/id_button1"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text=" B1"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B1"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button1" />
 
-            <TextView
-                android:id="@+id/volume_Button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button1"/>
 
+                <TextView
+                    android:id="@+id/timeButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button1"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button1"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -112,70 +161,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
-            <TextView
-                android:id="@+id/id_button2"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B2"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B2"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button2" />
 
-            <TextView
-                android:id="@+id/volume_Button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button2"/>
+
+                <TextView
+                    android:id="@+id/timeButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button2"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -195,70 +294,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
-            <TextView
-                android:id="@+id/id_button3"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B3"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B3"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button3" />
 
-            <TextView
-                android:id="@+id/volume_Button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button3"/>
+
+                <TextView
+                    android:id="@+id/timeButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button3"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -278,70 +427,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
-            <TextView
-                android:id="@+id/id_button4"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B4"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B4"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button4" />
 
-            <TextView
-                android:id="@+id/volume_Button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button4"/>
+
+                <TextView
+                    android:id="@+id/timeButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button4"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button4"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -361,70 +560,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
-            <TextView
-                android:id="@+id/id_button5"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B5"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B5"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button5" />
 
-            <TextView
-                android:id="@+id/volume_Button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button5"/>
+
+                <TextView
+                    android:id="@+id/timeButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button5"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -444,70 +693,122 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
-            <TextView
-                android:id="@+id/id_button6"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B6"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B6"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button6" />
 
-            <TextView
-                android:id="@+id/volume_Button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button6"/>
+
+                <TextView
+                    android:id="@+id/timeButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button6"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button6"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -527,70 +828,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
-            <TextView
-                android:id="@+id/id_button7"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B7"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B7"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button7" />
 
-            <TextView
-                android:id="@+id/volume_Button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button7"/>
+
+                <TextView
+                    android:id="@+id/timeButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button7"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button7"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -610,70 +961,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
-            <TextView
-                android:id="@+id/id_button8"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B8"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B8"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button8" />
 
-            <TextView
-                android:id="@+id/volume_Button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button8"/>
+
+                <TextView
+                    android:id="@+id/timeButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button8"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button8"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -693,70 +1094,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
-            <TextView
-                android:id="@+id/id_button9"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B9"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button9"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B9"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button9" />
 
-            <TextView
-                android:id="@+id/volume_Button9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button9"/>
+
+                <TextView
+                    android:id="@+id/timeButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button9"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button9"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -776,70 +1227,120 @@
             android:checkable="true"
             android:backgroundTint="@android:color/transparent"
             android:background="@android:color/transparent"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
-            <TextView
-                android:id="@+id/id_button10"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end"
-                android:textSize="20sp"
-                android:text="֍ B10"
-                android:elevation="10dp"
-                android:textColor="@color/main_color"
-                android:textStyle="bold|italic"/>
+                android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/name_sample_button10"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cornerRadius="10dp"
-                android:text="Name sample"
-                android:textAllCaps="false"
-                android:textColor="@color/main_color"
-                android:backgroundTint="@color/base_color"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/name_sample_button10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cornerRadius="10dp"
+                    android:textAllCaps="false"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/main_color"
+                    android:backgroundTint="@color/color4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/check_button10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:textSize="60sp"
-                android:text="_"
-                android:elevation="10dp"
-                android:textColor="@color/red_error"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/id_button10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:text="֍ B10"
+                    android:elevation="10dp"
+                    android:textColor="@color/color6"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/timeButton10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T: 0.30s"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="30dp"
-                android:elevation="10dp"/>
+                <ImageView
+                    android:id="@+id/graphic_complement_button10"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_background_buttons"
+                    android:elevation="5dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_sample_button10" />
 
-            <TextView
-                android:id="@+id/volume_Button10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vol. 55%"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="@color/main_color"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="10sp"
-                android:layout_marginBottom="15dp"
-                android:elevation="10dp"/>
+                <TextView
+                    android:id="@+id/sample_name_button10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sample name"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/color6"
+                    android:elevation="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button10"/>
+
+                <TextView
+                    android:id="@+id/timeButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="T: 0.30s"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/volume_Button10"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/volume_Button10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:elevation="10dp"
+                    android:text="Vol. 55%"
+                    android:textColor="@color/color6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/check_button10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:elevation="10dp"
+                    android:gravity="end"
+                    android:text="_"
+                    android:textColor="@color/red_error"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_sample_button10"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 

@@ -212,52 +212,52 @@ class FragmentButtons : Fragment(), ButtonsPresenter.View {
 
             when(i){
                 1 ->{
-                    binding.nameSampleButton1.text = title
+                    binding.sampleNameButton1.text = title
                     binding.timeButton1.text = "T: ${duration}s"
                     binding.volumeButton1.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 2 ->{
-                    binding.nameSampleButton2.text = title
+                    binding.sampleNameButton2.text = title
                     binding.timeButton2.text = "T: ${duration}s"
                     binding.volumeButton2.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 3 ->{
-                    binding.nameSampleButton3.text = title
+                    binding.sampleNameButton3.text = title
                     binding.timeButton3.text = "T: ${duration}s"
                     binding.volumeButton3.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 4 ->{
-                    binding.nameSampleButton4.text = title
+                    binding.sampleNameButton4.text = title
                     binding.timeButton4.text = "T: ${duration}s"
                     binding.volumeButton4.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 5 ->{
-                    binding.nameSampleButton5.text = title
+                    binding.sampleNameButton5.text = title
                     binding.timeButton5.text = "T: ${duration}s"
                     binding.volumeButton5.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 6 ->{
-                    binding.nameSampleButton6.text = title
+                    binding.sampleNameButton6.text = title
                     binding.timeButton6.text = "T: ${duration}s"
                     binding.volumeButton6.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 7 ->{
-                    binding.nameSampleButton7.text = title
+                    binding.sampleNameButton7.text = title
                     binding.timeButton7.text = "T: ${duration}s"
                     binding.volumeButton7.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 8 ->{
-                    binding.nameSampleButton8.text = title
+                    binding.sampleNameButton8.text = title
                     binding.timeButton8.text = "T: ${duration}s"
                     binding.volumeButton8.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 9 ->{
-                    binding.nameSampleButton9.text = title
+                    binding.sampleNameButton9.text = title
                     binding.timeButton9.text = "T: ${duration}s"
                     binding.volumeButton9.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }
                 10 ->{
-                    binding.nameSampleButton10.text = title
+                    binding.sampleNameButton10.text = title
                     binding.timeButton10.text = "T: ${duration}s"
                     binding.volumeButton10.text = "Vol. ${(item.volume * 100).toInt()}%"
                 }

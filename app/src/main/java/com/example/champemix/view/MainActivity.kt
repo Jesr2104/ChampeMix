@@ -60,10 +60,10 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             val audioManager =
                 applicationContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
-            binding.volumeUp.setColorFilter(resources.getColor(R.color.red_error))
+            binding.volumeUp.iconTint = getColorStateList(R.color.color5)
 
             Timer().schedule(50) {
-                binding.volumeUp.setColorFilter(resources.getColor(R.color.main_color))
+                binding.volumeUp.iconTint = getColorStateList(R.color.color4)
             }
 
             audioManager.adjustStreamVolume(
@@ -81,10 +81,10 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             val audioManager =
                 applicationContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
-            binding.volumeDown.setColorFilter(resources.getColor(R.color.red_error))
+            binding.volumeDown.iconTint = getColorStateList(R.color.color5)
 
             Timer().schedule(50) {
-                binding.volumeDown.setColorFilter(resources.getColor(R.color.main_color))
+                binding.volumeDown.iconTint = getColorStateList(R.color.color4)
             }
 
             audioManager.adjustStreamVolume(
