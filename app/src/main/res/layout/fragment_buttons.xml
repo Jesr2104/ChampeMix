@@ -94,7 +94,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button1"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button1"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton1"
@@ -227,7 +231,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button2"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button2"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton2"
@@ -360,7 +368,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button3"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button3"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton3"
@@ -493,7 +505,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button4"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button4"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton4"
@@ -626,7 +642,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button5"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button5"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton5"
@@ -759,7 +779,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button6"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button6"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton6"
@@ -894,7 +918,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button7"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button7"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button7"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton7"
@@ -1027,7 +1055,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button8"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button8"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton8"
@@ -1160,7 +1192,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button9"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button9"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button9"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton9"
@@ -1293,7 +1329,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/graphic_complement_button10"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button10"/>
+                    app:layout_constraintTop_toTopOf="@+id/graphic_complement_button10"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/timeButton10"

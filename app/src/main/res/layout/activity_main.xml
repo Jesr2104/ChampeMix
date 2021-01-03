@@ -33,7 +33,7 @@
         app:layout_constraintGuide_percent="0.13"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/insert_sound"
+        android:id="@+id/insertSoundButton1"
         android:layout_width="50dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"

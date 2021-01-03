@@ -30,7 +30,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -45,9 +45,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton1"
@@ -63,21 +69,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton1"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton1"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons1"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton1"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton1"
@@ -86,34 +95,82 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton1"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton1"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton1">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton1"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button1"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton1"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton1"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton1"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton1"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button1"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton1"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton1"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton1"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -136,7 +193,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -151,9 +208,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton2"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton2"
@@ -169,21 +232,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton2"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton2"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons2"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton2"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton2"
@@ -192,35 +258,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton2"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton2"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton2">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton2"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button2"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton2"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton2"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton2"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton2"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button2"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton2"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton2"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button2" />
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton2"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -242,7 +354,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -257,9 +369,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton3"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton3"
@@ -275,21 +393,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton3"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton3"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons3"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton3"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton3"
@@ -298,35 +419,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton3"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton3"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons3"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton3">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton3"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button3"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton3"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton3"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton3"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton3"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button3"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton3"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton3"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button3" />
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton3"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -348,7 +515,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -363,9 +530,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton4"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton4"
@@ -381,21 +554,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton4"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton4"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons4"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton4"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton4"
@@ -404,35 +580,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton4"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton4"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons4"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton4">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton4"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button4"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton4"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton4"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton4"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton4"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button4"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton4"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton4"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button4" />
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton4"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button4" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -454,7 +676,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -469,9 +691,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton5"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton5"
@@ -487,21 +715,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton5"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton5"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons5"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton5"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton5"
@@ -510,35 +741,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton5"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton5"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons5"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton5">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton5"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button5"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton5"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton5"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton5"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton5"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button5"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton5"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton5"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button5" />
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton5"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -560,7 +837,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -575,9 +852,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton6"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton6"
@@ -593,21 +876,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton6"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton6"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons6"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton6"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton6"
@@ -616,34 +902,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton6"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton6"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons6"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton6">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton6"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button6"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton6"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton6"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton6"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton6"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button6"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton6"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton6"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton6"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button6" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton6"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton6"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -665,7 +998,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -680,9 +1013,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton7"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton7"
@@ -698,21 +1037,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton7"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton7"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton7"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons7"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton7"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton7"
@@ -721,34 +1063,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton7"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton7"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons7"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton7">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton7"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button7"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton7"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton7"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton7"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton7"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button7"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton7"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton7"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton7"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button7" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton7"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton7"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button7" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -770,7 +1159,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -785,9 +1174,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton8"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton8"
@@ -803,21 +1198,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton8"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton8"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons8"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton8"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton8"
@@ -826,34 +1224,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton8"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton8"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons8"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton8">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton8"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button8"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton8"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton8"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton8"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton8"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button8"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton8"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton8"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton8"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton8"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button8" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton8"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton8"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -865,7 +1310,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:checkable="true"
@@ -890,9 +1335,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton9"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton9"
@@ -908,21 +1359,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton9"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton9"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton9"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons9"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton9"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton9"
@@ -931,34 +1385,82 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton9"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton9"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons9"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton9">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton9"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button9"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton9"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton9"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton9"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton9"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button9"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton9"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton9"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton9"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton9"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button9" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton9"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton9"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button9" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -981,7 +1483,7 @@
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
-            android:backgroundTint="@color/base_color"
+            android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
@@ -996,9 +1498,15 @@
                     android:text="Sample name"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/seekBarVolButton10"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:ellipsize="end"
+                    android:lines="1"/>
 
                 <ImageView
                     android:id="@+id/iconVolButton10"
@@ -1014,21 +1522,24 @@
 
                 <SeekBar
                     android:id="@+id/seekBarVolButton10"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:progress="38"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extraSettingButton10"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sampleNameButton10"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintBottom_toTopOf="@id/buttons10"
+                    android:progressDrawable="@drawable/small_volume_bar"
+                    android:thumb="@drawable/small_volume_bar_thumb"/>
 
                 <TextView
                     android:id="@+id/volButton10"
                     android:layout_width="wrap_content"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:text="38%"
+                    android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/seekBarVolButton10"
@@ -1037,34 +1548,81 @@
                     app:layout_constraintTop_toTopOf="@+id/seekBarVolButton10"
                     tools:ignore="SmallSp,SpUsage" />
 
-                <ImageButton
-                    android:id="@+id/insertSoundButton10"
-                    android:layout_width="40dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buttons10"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_insert_sound"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/extraSettingButton10">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarVolButton10"
+                    android:layout_marginBottom="10dp">
 
-                </ImageButton>
+                    <TextView
+                        android:id="@+id/title_load_sound_button10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_load_sound_button10"
+                        app:layout_constraintEnd_toEndOf="@+id/insertSoundButton10"
+                        app:layout_constraintStart_toStartOf="@+id/insertSoundButton10"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                <ImageButton
-                    android:id="@+id/extraSettingButton10"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/main_color"
-                    android:rotation="270"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/insertSoundButton10"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/title_setting_button10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setting"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@id/title_setting_button10"
+                        app:layout_constraintEnd_toEndOf="@+id/extraSettingButton10"
+                        app:layout_constraintStart_toStartOf="@+id/extraSettingButton10"
+                        tools:layout_editor_absoluteY="55dp" />
 
-                </ImageButton>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/insertSoundButton10"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_insert_song"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/extraSettingButton10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_load_sound_button10" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/extraSettingButton10"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:backgroundTint="@color/color4"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/ic_settings"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/insertSoundButton10"
+                        app:layout_constraintTop_toBottomOf="@+id/title_setting_button10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

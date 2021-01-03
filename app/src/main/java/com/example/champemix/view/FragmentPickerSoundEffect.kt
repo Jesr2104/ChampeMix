@@ -25,7 +25,7 @@ class FragmentPickerSoundEffect : Fragment(), PickerSoundEffectPresenter.View {
         pickerSoundEffectPresenter.onCreate(this)
 
         // Inflate the layout for this fragment
-        return return binding.root
+        return binding.root
     }
 
     override fun onDestroy() {

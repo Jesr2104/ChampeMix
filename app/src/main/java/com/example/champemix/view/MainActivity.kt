@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.champemix.R
 import com.example.champemix.databinding.ActivityMainBinding
 import com.example.champemix.presenter.MainPresenter
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -54,6 +55,11 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             }
         }
 
+        binding.menuButton.setOnClickListener {
+            val fragmentGeneralSetting = FragmentGeneralSettings()
+            makeCurrentFragment(fragmentGeneralSetting)
+        }
+
         binding.volumeUp.setOnClickListener {
 
             val streamType = AudioManager.STREAM_MUSIC
@@ -93,6 +99,20 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                 AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE
             )
             updateVolume()
+        }
+
+        binding.buttonExit.setOnClickListener {
+
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Please Confirm")
+                .setMessage("Do you want to exit")
+                .setNegativeButton("No") { _, _ ->
+                    // don't do nothing
+                }
+                .setPositiveButton("Yes") { _, _ ->
+                    finish()
+                }
+                .show()
         }
 
         //==================================================================================
