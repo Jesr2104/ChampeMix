@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="@+id/logoXB" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/menu_button"
+        android:id="@+id/general_setting"
         android:layout_width="50dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
@@ -85,7 +85,7 @@
         app:iconPadding="0dp"
         android:backgroundTint="@color/color4"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toStartOf="@+id/menu_button"
+        app:layout_constraintEnd_toStartOf="@+id/general_setting"
         app:layout_constraintTop_toTopOf="@+id/logoXB" />
 
     <com.google.android.material.button.MaterialButton
@@ -99,7 +99,7 @@
         android:textSize="23sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/logoXB"
-        app:layout_constraintEnd_toEndOf="@+id/menu_button"
+        app:layout_constraintEnd_toEndOf="@+id/general_setting"
         app:layout_constraintStart_toStartOf="@+id/setting_button" />
 
     <com.google.android.material.button.MaterialButton

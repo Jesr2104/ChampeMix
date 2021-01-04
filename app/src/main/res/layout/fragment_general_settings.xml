@@ -1,67 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.FragmentGeneralSettings"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_general_settings">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/go_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:backgroundTint="@color/color2"
-            android:insetLeft="0dp"
-            android:insetTop="0dp"
-            android:insetRight="0dp"
-            android:insetBottom="0dp"
-            app:cornerRadius="5dp"
-            app:icon="@drawable/ic_come_back"
-            android:rotation="180"
-            app:iconGravity="textStart"
-            app:iconPadding="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="5dp"
             android:elevation="10dp"
             android:text="settings"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="50sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_number1"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/layout_number1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/color4"
+            android:background="@drawable/dark_background"
+            app:layout_constraintBottom_toTopOf="@id/layout_number2"
+            app:layout_constraintEnd_toStartOf="@id/layout_number4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintEnd_toStartOf="@id/este"
             app:layout_constraintWidth_percent="0.45">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/option1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:text="Save keyboard settings"
-                android:textColor="@color/color2"
+                android:textColor="@color/color7"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -69,138 +55,144 @@
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switchMaterial1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:thumb="@drawable/thumb"
+                android:layout_height="40dp"
+                android:layout_marginEnd="15dp"
+                android:checked="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintStart_toEndOf="@+id/option1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:track="@drawable/track" />
+                android:theme="@style/Switch"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/layout_number2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/color4"
+            android:background="@drawable/dark_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toStartOf="@id/este"
-            app:layout_constraintWidth_percent="0.45">
+            app:layout_constraintTop_toBottomOf="@+id/layout_number1"
+            app:layout_constraintEnd_toStartOf="@id/layout_number4"
+            app:layout_constraintBottom_toTopOf="@id/layout_number3"
+            app:layout_constraintWidth_percent="0.45"
+            android:layout_marginTop="1dp">
 
             <TextView
-                android:id="@+id/textView355"
+                android:id="@+id/option2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Always record and save the new track"
-                android:textColor="@color/color2"
+                android:textColor="@color/color7"
+                android:layout_marginStart="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"/>
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switchMaterial"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:checked="false"
-                android:thumb="@drawable/thumb"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/textView355"
+                app:layout_constraintStart_toEndOf="@+id/option2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:track="@drawable/track" />
+                android:layout_marginEnd="15dp"
+                android:theme="@style/Switch"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_number3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/color4"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/dark_background"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/layout_number4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/este"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/layout_number2"
             app:layout_constraintWidth_percent="0.45"
-            android:padding="15dp">
+            android:layout_marginBottom="10dp">
 
             <TextView
-                android:id="@+id/textView377"
+                android:id="@+id/option3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The audios are stored in: "
-                android:textColor="@color/color2"
+                android:textColor="@color/color7"
+                android:textStyle="bold|italic"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
                 android:text="/ChampeMix-Records"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView377" />
+                android:textColor="@color/color7"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/option3"
+                app:layout_constraintTop_toBottomOf="@+id/option3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/este"
+            android:id="@+id/layout_number4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/color4"
+            android:background="@drawable/dark_background"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintWidth_percent="0.45"
-            android:padding="15dp">
+            app:layout_constraintStart_toEndOf="@+id/layout_number1"
+            app:layout_constraintTop_toTopOf="@+id/layout_number1"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintWidth_percent="0.45">
 
             <TextView
-                android:id="@+id/textView356"
+                android:id="@+id/option4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Change Thema:"
-                android:textColor="@color/color2"
+                android:textColor="@color/color7"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Light Theme"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView356" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dark Theme"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@id/textView356" />
 
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checkedButton="@+id/radio_button_1"
+                android:checkedButton="@+id/lightTheme"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/option4">
 
                 <RadioButton
-                    android:id="@+id/radio_button_1"
+                    android:id="@+id/lightTheme"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="selected" />
+                    android:text="Light Theme"
+                    android:textColor="@color/color7"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/white"/>
 
                 <RadioButton
-                    android:id="@+id/radio_button_2"
+                    android:id="@+id/darkTheme"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="select" />
+                    android:text="Dark Theme"
+                    android:textColor="@color/color7"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/white"/>
 
             </RadioGroup>
 

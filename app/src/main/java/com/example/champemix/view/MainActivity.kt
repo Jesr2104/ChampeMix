@@ -18,10 +18,11 @@ import kotlin.concurrent.schedule
 class MainActivity : AppCompatActivity(), MainPresenter.View {
 
     var settingOn = false
+    var generalSetting = false
     private val mainPresenter = MainPresenter()
     lateinit var binding: ActivityMainBinding
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -45,19 +46,28 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
         binding.settingButton.setOnClickListener {
             settingOn = if (settingOn) {
-                val fragmentButtons = FragmentButtons()
-                makeCurrentFragment(fragmentButtons)
+                makeCurrentFragment(FragmentButtons())
+                binding.settingButton.icon = resources.getDrawable(R.drawable.ic_tune,theme)
                 false
             } else {
-                val fragmentSettingSounds = FragmentSettingSounds()
-                makeCurrentFragment(fragmentSettingSounds)
+                makeCurrentFragment(FragmentSettingSounds())
+                binding.settingButton.icon = resources.getDrawable(R.drawable.ic_keyboard,theme)
                 true
             }
         }
 
-        binding.menuButton.setOnClickListener {
-            val fragmentGeneralSetting = FragmentGeneralSettings()
-            makeCurrentFragment(fragmentGeneralSetting)
+        binding.generalSetting.setOnClickListener {
+            generalSetting = if (!generalSetting){
+                makeCurrentFragment(FragmentGeneralSettings())
+                binding.settingButton.icon = resources.getDrawable(R.drawable.ic_tune,theme)
+                binding.generalSetting.icon = resources.getDrawable(R.drawable.ic_back,theme)
+                true
+            } else {
+                makeCurrentFragment(FragmentButtons())
+                binding.settingButton.icon = resources.getDrawable(R.drawable.ic_tune,theme)
+                binding.generalSetting.icon = resources.getDrawable(R.drawable.ic_settings,theme)
+                false
+            }
         }
 
         binding.volumeUp.setOnClickListener {
