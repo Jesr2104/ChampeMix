@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
     tools:context=".view.FragmentGeneralSettings"
-    android:padding="5dp">
+    android:configChanges="uiMode">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,24 +18,25 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:elevation="10dp"
             android:text="settings"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/layout_number1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/layout_number1"/>
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_number1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/dark_background"
-            app:layout_constraintBottom_toTopOf="@id/layout_number2"
+            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toStartOf="@id/layout_number4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -58,51 +60,12 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="15dp"
                 android:checked="true"
+                android:theme="@style/Switch"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/option1"
-                app:layout_constraintTop_toTopOf="parent"
-                android:theme="@style/Switch"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_number2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/dark_background"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_number1"
-            app:layout_constraintEnd_toStartOf="@id/layout_number4"
-            app:layout_constraintBottom_toTopOf="@id/layout_number3"
-            app:layout_constraintWidth_percent="0.45"
-            android:layout_marginTop="1dp">
-
-            <TextView
-                android:id="@+id/option2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Always record and save the new track"
-                android:textColor="@color/color7"
-                android:layout_marginStart="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textStyle="bold"/>
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switchMaterial"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:checked="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/option2"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginEnd="15dp"
-                android:theme="@style/Switch"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -110,15 +73,15 @@
             android:id="@+id/layout_number3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/dark_background"
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/layout_number4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_number2"
+            app:layout_constraintTop_toBottomOf="@+id/layout_number1"
             app:layout_constraintWidth_percent="0.45"
-            android:layout_marginBottom="10dp">
+            app:layout_constraintVertical_bias=".0">
 
             <TextView
                 android:id="@+id/option3"
@@ -170,7 +133,6 @@
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checkedButton="@+id/lightTheme"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -180,19 +142,19 @@
                     android:id="@+id/lightTheme"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/white"
                     android:text="Light Theme"
                     android:textColor="@color/color7"
-                    android:textStyle="bold"
-                    android:buttonTint="@color/white"/>
+                    android:textStyle="bold" />
 
                 <RadioButton
                     android:id="@+id/darkTheme"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/white"
                     android:text="Dark Theme"
                     android:textColor="@color/color7"
-                    android:textStyle="bold"
-                    android:buttonTint="@color/white"/>
+                    android:textStyle="bold" />
 
             </RadioGroup>
 

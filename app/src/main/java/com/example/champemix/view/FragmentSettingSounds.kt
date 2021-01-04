@@ -1,19 +1,15 @@
 package com.example.champemix.view
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.example.champemix.R
 import com.example.champemix.databinding.FragmentSettingSoundsBinding
 import com.example.champemix.presenter.SettingButtonPresenter
 import com.example.champemix.utility.SoundButton
-
 
 class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
 

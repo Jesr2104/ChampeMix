@@ -7,10 +7,12 @@ import android.media.AudioManager
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.champemix.R
 import com.example.champemix.databinding.ActivityMainBinding
 import com.example.champemix.presenter.MainPresenter
+import com.example.champemix.utility.GeneralSettingData
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import kotlin.concurrent.schedule
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
         // initialization of the presenter
-        mainPresenter.onCreate(this)
+        mainPresenter.onCreate(this, applicationContext)
 
         // fragment initial, we need to show the buttons like a first option
         val fragmentButtons = FragmentButtons()
@@ -138,6 +140,14 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         val volume = volumeLevel.toFloat() / maxVolume
 
         binding.valueVolume.text = "${(volume * 100).toInt()}%"
+    }
+
+    override fun dataSetting(configData: GeneralSettingData?) {
+        if (configData!!.Theme){
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
+        } else {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
+        }
     }
 
     // function to change between Fragments
