@@ -23,6 +23,8 @@
     <color name="color6">#CACDF5</color>
     <color name="color7">#2699FB</color>
 
-    <color name="main_controls">#4F5061</color>
+    <color name="main_controls">#FFFFFFFF</color>
+
+
 
 </resources>

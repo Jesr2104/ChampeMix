@@ -49,12 +49,6 @@ class GeneralSettingPresenter {
             Toast.makeText(context, "successfully saved", Toast.LENGTH_SHORT).show()
         }
 
-        MaterialAlertDialogBuilder(context)
-            .setMessage("Changes will be applied once you restart the app")
-            .setPositiveButton("Ok") { _, _ ->
-            }
-            .show()
-
         this.view = null
     }
 }

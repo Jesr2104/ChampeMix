@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.champemix.databinding.FragmentGeneralSettingsBinding
 import com.example.champemix.presenter.GeneralSettingPresenter
@@ -32,6 +33,8 @@ class FragmentGeneralSettings : Fragment(), GeneralSettingPresenter.View{
         binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             generalSettingPresenter.edited()
             val textRadioButton = binding.radioGroup.findViewById<RadioButton>(checkedId).text
+
+            Toast.makeText(context, "Changes will be applied once you restart the app", Toast.LENGTH_SHORT).show()
 
             if (textRadioButton == "Light Theme") {
                 generalSettingPresenter.changeChangeTheme(true)

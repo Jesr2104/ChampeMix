@@ -47,18 +47,22 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         //==================================================================================
 
         binding.settingButton.setOnClickListener {
+            generalSetting = false
             settingOn = if (settingOn) {
                 makeCurrentFragment(FragmentButtons())
                 binding.settingButton.icon = resources.getDrawable(R.drawable.ic_tune,theme)
+                binding.generalSetting.icon = resources.getDrawable(R.drawable.ic_settings,theme)
                 false
             } else {
                 makeCurrentFragment(FragmentSettingSounds())
                 binding.settingButton.icon = resources.getDrawable(R.drawable.ic_keyboard,theme)
+                binding.generalSetting.icon = resources.getDrawable(R.drawable.ic_settings,theme)
                 true
             }
         }
 
         binding.generalSetting.setOnClickListener {
+            settingOn = false
             generalSetting = if (!generalSetting){
                 makeCurrentFragment(FragmentGeneralSettings())
                 binding.settingButton.icon = resources.getDrawable(R.drawable.ic_tune,theme)
