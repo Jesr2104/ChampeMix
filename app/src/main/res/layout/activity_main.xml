@@ -270,7 +270,7 @@
         app:layout_constraintTop_toBottomOf="@id/song_name"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/current_position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -278,7 +278,7 @@
         android:padding="1dp"
         android:paddingStart="3dp"
         android:paddingEnd="3dp"
-        android:text="2:35"
+        android:text="0:00"
         android:textColor="@color/white"
         android:textSize="10sp"
         android:textStyle="bold|italic"
@@ -287,6 +287,7 @@
         tools:ignore="SmallSp" />
 
     <TextView
+        android:id="@+id/durationSong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
