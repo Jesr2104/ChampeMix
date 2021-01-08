@@ -27,7 +27,7 @@ class DefaultConfiguration(context: Context) {
 
             soundButton.titleSound = GetMetadata().getTitle(context,soundsResource[i])
             soundButton.duration = GetMetadata().getDuration(context,soundsResource[i])
-            soundButton.volume = 0.75f
+            soundButton.volume = 1.0f
             soundButton.resource = nameResource
 
             listButtons.add(soundButton)

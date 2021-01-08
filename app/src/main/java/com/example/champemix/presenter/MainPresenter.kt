@@ -8,7 +8,7 @@ class MainPresenter {
 
     private var view: View? = null
 
-    interface View{
+    interface View {
         fun dataSetting(configData: GeneralSettingData?)
     }
 
@@ -17,9 +17,10 @@ class MainPresenter {
 
         val configData = GeneralSetting().customPreference(context).getData()
 
-        if (configData == null){
+        if (configData == null) {
             GeneralSetting().customPreference(context).setData(GeneralSettingData())
         }
+
         view.dataSetting(configData)
     }
 

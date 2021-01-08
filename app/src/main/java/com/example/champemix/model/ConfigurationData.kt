@@ -43,4 +43,9 @@ class ConfigurationData {
             it.putString("dataSoundsConfig", json)
         }
     }
+
+    fun deleteData(context: Context){
+        val shareP = customPreference(context).dataSharePreference!!.edit().clear()
+        shareP.apply()
+    }
 }

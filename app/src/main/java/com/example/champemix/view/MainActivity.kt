@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.champemix.R
 import com.example.champemix.databinding.ActivityMainBinding
+import com.example.champemix.model.ConfigurationData
+import com.example.champemix.model.GeneralSetting
 import com.example.champemix.presenter.MainPresenter
 import com.example.champemix.utility.GeneralSettingData
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -35,6 +37,16 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
         // initialization of the presenter
         mainPresenter.onCreate(this, applicationContext)
+
+        //==================================================================================
+        //      Check the general configurations to know is
+        //      the app need to save configuration buttons
+        //==================================================================================
+        val configData = GeneralSetting().customPreference(applicationContext).getData()
+        if (!configData!!.saveKeyboard){
+            ConfigurationData().deleteData(applicationContext)
+        }
+        //==================================================================================
 
         // fragment initial, we need to show the buttons like a first option
         val fragmentButtons = FragmentButtons()
@@ -84,8 +96,8 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
             binding.volumeUp.iconTint = getColorStateList(R.color.color5)
 
-            Timer().schedule(50) {
-                binding.volumeUp.iconTint = getColorStateList(R.color.color4)
+            Timer().schedule(100) {
+                binding.volumeUp.iconTint = getColorStateList(R.color.main_controls)
             }
 
             audioManager.adjustStreamVolume(
@@ -105,8 +117,8 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
             binding.volumeDown.iconTint = getColorStateList(R.color.color5)
 
-            Timer().schedule(50) {
-                binding.volumeDown.iconTint = getColorStateList(R.color.color4)
+            Timer().schedule(100) {
+                binding.volumeDown.iconTint = getColorStateList(R.color.main_controls)
             }
 
             audioManager.adjustStreamVolume(
