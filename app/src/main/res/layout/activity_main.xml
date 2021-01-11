@@ -295,7 +295,7 @@
         android:padding="1dp"
         android:paddingStart="3dp"
         android:paddingEnd="3dp"
-        android:text="3:58"
+        android:text="0:00"
         android:textColor="@color/white"
         android:textSize="10sp"
         android:textStyle="bold|italic"

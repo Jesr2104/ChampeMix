@@ -3,10 +3,10 @@ package com.example.champemix.presenter.tools
 import android.content.Context
 import android.media.MediaPlayer
 
-class MyPlayerSong(private val context: Context, private val song: Int) {
+class MyPlayerSong(context: Context, song: Int) {
 
     private var mPlayer = MediaPlayer()
-    var position = 0
+    private var position = 0
 
     init {
         mPlayer = MediaPlayer.create(context, song)
@@ -14,6 +14,10 @@ class MyPlayerSong(private val context: Context, private val song: Int) {
 
     fun play() {
         mPlayer.start()
+    }
+
+    fun getPlayer(): MediaPlayer {
+       return mPlayer
     }
 
     fun currentPosition(): Int {
@@ -31,6 +35,11 @@ class MyPlayerSong(private val context: Context, private val song: Int) {
         }
     }
 
+    fun finishSong(){
+        position = 0
+        mPlayer.stop()
+    }
+
     fun isPlayer(): Boolean {
         return mPlayer.isPlaying
     }
@@ -41,6 +50,7 @@ class MyPlayerSong(private val context: Context, private val song: Int) {
     }
 
     fun setNewPositionPlayer(newPosition: Int){
+        position = newPosition
         mPlayer.seekTo(newPosition)
     }
 
@@ -68,5 +78,10 @@ class MyPlayerSong(private val context: Context, private val song: Int) {
 
         mPlayer.seekTo(position)
         play()
+    }
+
+    fun onDestroy() {
+        mPlayer.reset()
+        mPlayer.release()
     }
 }

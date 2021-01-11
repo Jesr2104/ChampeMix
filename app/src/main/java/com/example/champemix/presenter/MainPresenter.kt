@@ -15,6 +15,7 @@ class MainPresenter {
     interface View {
         fun dataSetting(configData: GeneralSettingData?)
         fun loadDuration(duration: Int)
+        fun updateFinish()
     }
 
     fun onCreate(view: View, context: Context) {
@@ -73,12 +74,21 @@ class MainPresenter {
 
     fun playSong(context: Context, song: Int){
         playerSong = MyPlayerSong(context, song)
-
         view!!.loadDuration(playerSong.duration())
-
         playerSong.play()
+        finish()
     }
 
+    fun finish(){
+        playerSong.getPlayer().setOnCompletionListener {
+            view!!.updateFinish()
+            playerSong.finishSong()
+        }
+    }
+
+    /**
+     *  @functionality: function to set time of the app on minutes and secords
+     */
     fun formatDuration(time_milliSeconds: Int): String {
 
         val minutes = ((time_milliSeconds %  (1000 * 60 * 60)) / (1000 * 60)).toInt()
@@ -91,27 +101,7 @@ class MainPresenter {
         }
     }
 
-    fun pauseSong(){
-        playerSong.pause()
-    }
-
-    fun isPlayer(): Boolean {
-        return playerSong.isPlayer()
-    }
-
     fun onDestroy() {
         this.view = null
-    }
-
-    fun resume(){
-        playerSong.resume()
-    }
-
-    fun rewind(){
-        playerSong.rewind()
-    }
-
-    fun forward(){
-        playerSong.forward()
     }
 }

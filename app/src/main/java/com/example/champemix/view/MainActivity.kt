@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             updateSeekBar()
             binding.currentPosition.text =
                 mainPresenter.formatDuration(mainPresenter.playerSong.currentPosition())
+
             handle.postDelayed(this, 1000)
         }
     }
@@ -71,12 +72,12 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                 // this property gonna change when you change the song
                 state = true
             } else {
-                if (mainPresenter.isPlayer()) {
-                    mainPresenter.pauseSong()
+                if (mainPresenter.playerSong.isPlayer()) {
+                    mainPresenter.playerSong.pause()
                     handle.removeCallbacks(updateAction)
                     binding.play.icon = resources.getDrawable(R.drawable.ic_play, theme)
                 } else {
-                    mainPresenter.resume()
+                    mainPresenter.playerSong.resume()
                     updateCurrentPosition()
                     binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
                 }
@@ -84,11 +85,15 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         }
 
         binding.fastForward.setOnClickListener {
-            mainPresenter.forward()
+            if (state) {
+                mainPresenter.playerSong.forward()
+            }
         }
 
         binding.fastRewind.setOnClickListener {
-            mainPresenter.rewind()
+            if (state) {
+                mainPresenter.playerSong.rewind()
+            }
         }
 
         binding.settingButton.setOnClickListener {
@@ -163,9 +168,16 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         binding.seekBar.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser){
-                    val resultNewPosition = (progress.toFloat() / 100) * mainPresenter.playerSong.duration()
-                    mainPresenter.playerSong.setNewPositionPlayer(resultNewPosition.toInt())
+                if (state) {
+                    if (fromUser) {
+                        val resultNewPosition =
+                            (progress.toFloat() / 100) * mainPresenter.playerSong.duration()
+                        mainPresenter.playerSong.setNewPositionPlayer(resultNewPosition.toInt())
+
+                        //update the current time when the user move the seek bar
+                        binding.currentPosition.text =
+                            mainPresenter.formatDuration(mainPresenter.playerSong.currentPosition())
+                    }
                 }
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -193,7 +205,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
     }
 
     private fun updateCurrentPosition() {
-        if (mainPresenter.isPlayer()) {
+        if (mainPresenter.playerSong.isPlayer()) {
             handle.postDelayed(updateAction, 1000)
         }
     }
@@ -210,6 +222,15 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
     override fun loadDuration(duration: Int) {
         binding.durationSong.text =
             mainPresenter.formatDuration(mainPresenter.playerSong.duration())
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
+    override fun updateFinish() {
+        state = false
+        handle.removeCallbacks(updateAction)
+        binding.seekBar.progress = 0
+        binding.play.icon = resources.getDrawable(R.drawable.ic_play, theme)
+        binding.currentPosition.text = "0:00"
     }
 
     // function to change between Fragments
