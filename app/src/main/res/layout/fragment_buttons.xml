@@ -3,6 +3,7 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -60,7 +61,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B1"
+                    android:text="@string/b1"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -71,6 +72,7 @@
                 <ImageView
                     android:id="@+id/graphic_complement_button1"
                     android:layout_width="match_parent"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
@@ -85,7 +87,7 @@
                     android:id="@+id/sample_name_button1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -107,12 +109,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button1"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button1"
@@ -122,12 +125,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button1"
@@ -136,7 +140,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -197,7 +201,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B2"
+                    android:text="@string/b2"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -209,6 +213,7 @@
                     android:id="@+id/graphic_complement_button2"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -222,7 +227,7 @@
                     android:id="@+id/sample_name_button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -244,12 +249,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button2"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button2"
@@ -259,12 +265,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button2"
@@ -273,7 +280,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -334,7 +341,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B3"
+                    android:text="@string/b3"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -345,6 +352,7 @@
                 <ImageView
                     android:id="@+id/graphic_complement_button3"
                     android:layout_width="match_parent"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
@@ -359,7 +367,7 @@
                     android:id="@+id/sample_name_button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -381,12 +389,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button3"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button3"
@@ -396,12 +405,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button3"
@@ -410,7 +420,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -471,7 +481,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B4"
+                    android:text="@string/b4"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -483,6 +493,7 @@
                     android:id="@+id/graphic_complement_button4"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -496,7 +507,7 @@
                     android:id="@+id/sample_name_button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -518,12 +529,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button4"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button4"
@@ -533,12 +545,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button4"
@@ -547,7 +560,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -608,7 +621,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B5"
+                    android:text="@string/b5"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -620,6 +633,7 @@
                     android:id="@+id/graphic_complement_button5"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -633,7 +647,7 @@
                     android:id="@+id/sample_name_button5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -655,12 +669,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button5"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button5"
@@ -670,12 +685,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button5"
@@ -684,7 +700,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -745,7 +761,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B6"
+                    android:text="@string/b6"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -757,6 +773,7 @@
                     android:id="@+id/graphic_complement_button6"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -770,7 +787,7 @@
                     android:id="@+id/sample_name_button6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -792,12 +809,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button6"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button6"
@@ -807,12 +825,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button6"
@@ -821,7 +840,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -884,7 +903,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B7"
+                    android:text="@string/b7"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -896,6 +915,7 @@
                     android:id="@+id/graphic_complement_button7"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -909,7 +929,7 @@
                     android:id="@+id/sample_name_button7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -931,12 +951,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button7"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button7"
@@ -946,12 +967,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button7"
@@ -960,7 +982,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -1021,7 +1043,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B8"
+                    android:text="@string/b8"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -1033,6 +1055,7 @@
                     android:id="@+id/graphic_complement_button8"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -1046,7 +1069,7 @@
                     android:id="@+id/sample_name_button8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -1068,12 +1091,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button8"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button8"
@@ -1083,12 +1107,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button8"
@@ -1097,7 +1122,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -1158,7 +1183,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B9"
+                    android:text="@string/b9"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -1170,6 +1195,7 @@
                     android:id="@+id/graphic_complement_button9"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -1183,7 +1209,7 @@
                     android:id="@+id/sample_name_button9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -1205,12 +1231,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button9"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button9"
@@ -1220,12 +1247,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button9"
@@ -1234,7 +1262,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"
@@ -1295,7 +1323,7 @@
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:textSize="20sp"
-                    android:text="֍ B10"
+                    android:text="@string/b10"
                     android:elevation="10dp"
                     android:textColor="@color/color6"
                     android:textStyle="bold|italic"
@@ -1307,6 +1335,7 @@
                     android:id="@+id/graphic_complement_button10"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/background_for_sampler_name"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_background_buttons"
                     android:elevation="5dp"
@@ -1320,7 +1349,7 @@
                     android:id="@+id/sample_name_button10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sample name"
+                    android:text="@string/sample_name"
                     android:textAlignment="center"
                     android:textStyle="bold|italic"
                     android:textColor="@color/color6"
@@ -1342,12 +1371,13 @@
                     android:layout_gravity="bottom|start"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="T: 0.30s"
+                    android:text="@string/t_0_30s"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/volume_Button10"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/volume_Button10"
@@ -1357,12 +1387,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="10dp"
                     android:elevation="10dp"
-                    android:text="Vol. 55%"
+                    android:text="@string/vol_55"
                     android:textColor="@color/color6"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
 
                 <TextView
                     android:id="@+id/check_button10"
@@ -1371,7 +1402,7 @@
                     android:layout_gravity="bottom"
                     android:elevation="10dp"
                     android:gravity="end"
-                    android:text="_"
+                    android:text="@string/Light_button"
                     android:textColor="@color/red_error"
                     android:textSize="60sp"
                     android:textStyle="bold"

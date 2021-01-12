@@ -8,4 +8,37 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="exit">Exit</string>
+    <string name="rec">Rec</string>
+    <string name="mic">Mic</string>
+    <string name="vol">Vol.</string>
+    <string name="_58">58%</string>
+    <string name="song_name">Song name</string>
+    <string name="_0_00">0:00</string>
+    <string name="b1">֍ B1</string>
+    <string name="sample_name">Sample name</string>
+    <string name="t_0_30s">T: 0.30s</string>
+    <string name="vol_55">Vol. 55%</string>
+    <string name="b3">֍ B3</string>
+    <string name="b5">֍ B5</string>
+    <string name="b7">֍ B7</string>
+    <string name="b9">֍ B9</string>
+    <string name="b10">֍ B10</string>
+    <string name="b8">֍ B8</string>
+    <string name="b6">֍ B6</string>
+    <string name="b4">֍ B4</string>
+    <string name="b2">֍ B2</string>
+    <string name="background_for_sampler_name">Background for sampler name</string>
+    <string name="Light_button">_</string>
+    <string name="settings">settings</string>
+    <string name="save_keyboard_settings">Save keyboard settings</string>
+    <string name="the_audios_are_stored_in">The audios are stored in:</string>
+    <string name="champemix_records">/ChampeMix-Records</string>
+    <string name="change_theme">Change Theme:</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="icon_volume">Icon Volume</string>
+    <string name="_38">38%</string>
+    <string name="load">Load</string>
+    <string name="select_effect_sound">Select Effect Sound</string>
 </resources>
