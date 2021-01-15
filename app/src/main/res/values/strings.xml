@@ -40,5 +40,6 @@
     <string name="icon_volume">Icon Volume</string>
     <string name="_38">38%</string>
     <string name="load">Load</string>
-    <string name="select_effect_sound">Select Effect Sound</string>
+    <string name="select_effect_sound">Select Effect</string>
+    <string name="sound_effect_list">Effect List</string>
 </resources>

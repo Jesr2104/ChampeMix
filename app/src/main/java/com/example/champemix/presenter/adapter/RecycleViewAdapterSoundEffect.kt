@@ -47,6 +47,7 @@ class RecycleViewAdapterSoundEffect(
             }
 
             binding.loadEffectSample.setOnClickListener {
+
                 Toast.makeText(context, "cargar button", Toast.LENGTH_SHORT).show()
             }
         }

@@ -6,30 +6,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/picker_sound_effect"
     tools:context=".view.PickerSoundEffectActivity">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sound Effect List"
-        android:textStyle="bold|italic"
-        android:textSize="40dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="15dp"
+        android:text="@string/sound_effect_list"
+        android:textColor="@color/color6"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAllCaps="true"/>
 
-    <View
-        android:id="@+id/separator"
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="@drawable/separator_line_light"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_setting"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_back"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/color5"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerviewFields"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewFields"
@@ -39,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintVertical_bias="0.0"
         android:padding="10dp"
         tools:listitem="@layout/item_sound"

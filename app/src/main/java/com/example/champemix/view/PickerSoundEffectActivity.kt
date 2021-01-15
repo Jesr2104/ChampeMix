@@ -1,9 +1,9 @@
 package com.example.champemix.view
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.champemix.databinding.ActivityPickerSoundEffectBinding
 import com.example.champemix.presenter.PickerSoundEffectPresenter
 import com.example.champemix.presenter.adapter.RecycleViewAdapterSoundEffect
@@ -19,13 +19,14 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
         binding = ActivityPickerSoundEffectBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // block the app orientation of the activity on Landscape
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-
         // initialization of the presenter
         pickerSoundEffectPresenter.onCreate(this)
 
         buttonNumber = intent.getIntExtra("ButtonNumber", 0)
+
+        binding.backSetting.setOnClickListener {
+            finish()
+        }
     }
 
     override fun onDestroy() {
@@ -34,10 +35,22 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
     }
 
     override fun loadData(data: ArrayList<String>) {
-        binding.recyclerviewFields.layoutManager = LinearLayoutManager(this)
+        binding.recyclerviewFields.layoutManager = GridLayoutManager(this,2)
         binding.recyclerviewFields.adapter = RecycleViewAdapterSoundEffect(
             applicationContext,
             data
         )
+    }
+
+    // function to hide the navigationBar and statusBar and leave float
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        }
     }
 }

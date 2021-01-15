@@ -1,6 +1,7 @@
 package com.example.champemix.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -177,16 +178,9 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
         })
 
         binding.insertSoundButton1.setOnClickListener {
-//            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
-//            soundList.putExtra("ButtonNumber", 1)
-//            startActivity(soundList)
-
-//            binding.ConfigButton.visibility = View.INVISIBLE
-//            val nuevoFragmento: Fragment = FragmentPickerSoundEffect()
-//            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-//            transaction.replace(R.id.mainFragment, nuevoFragmento)
-//            transaction.addToBackStack(null)
-//            transaction.commit()
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 1)
+            startActivity(soundList)
         }
 
         return binding.root
