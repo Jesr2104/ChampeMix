@@ -2,7 +2,7 @@ package com.example.champemix.view
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.pm.ActivityInfo
+import android.content.Intent
 import android.media.AudioManager
 import android.os.Bundle
 import android.os.Handler
@@ -180,6 +180,11 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+
+        binding.insertSongButton.setOnClickListener {
+            val songPicker = Intent(this, SongPickerActivity::class.java)
+            startActivity(songPicker)
+        }
 
         //==================================================================================
     }

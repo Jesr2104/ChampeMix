@@ -179,62 +179,62 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.insertSoundButton1.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+        binding.insertSongButton.setOnClickListener {
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 1)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton2.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 2)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton3.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 3)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton4.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 4)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton5.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 5)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton6.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 6)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton7.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 7)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton8.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 8)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton9.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 9)
             startActivityForResult(soundList,1)
         }
 
         binding.insertSoundButton10.setOnClickListener {
-            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            val soundList = Intent(context, SoundEffectPickerActivity::class.java)
             soundList.putExtra("ButtonNumber", 10)
             startActivityForResult(soundList,1)
         }

@@ -4,13 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.champemix.databinding.ActivityPickerSoundEffectBinding
 import com.example.champemix.presenter.PickerSoundEffectPresenter
 import com.example.champemix.presenter.adapter.RecycleViewAdapterSoundEffect
+import com.example.champemix.utility.GeneralSettingData
 import com.example.champemix.utility.LoadEffectSound
 
-class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresenter.View, LoadEffectSound {
+class SoundEffectPickerActivity : AppCompatActivity(), PickerSoundEffectPresenter.View, LoadEffectSound {
 
     private var buttonNumber: Int = 0
     private val pickerSoundEffectPresenter = PickerSoundEffectPresenter()
@@ -22,7 +24,7 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
         setContentView(binding.root)
 
         // initialization of the presenter
-        pickerSoundEffectPresenter.onCreate(this)
+        pickerSoundEffectPresenter.onCreate(this, applicationContext)
 
         buttonNumber = intent.getIntExtra("ButtonNumber", 0)
 
@@ -43,6 +45,14 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
             data,
             this
         )
+    }
+
+    override fun dataSetting(configData: GeneralSettingData?) {
+        if (configData!!.Theme) {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
+        } else {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
+        }
     }
 
     // function to hide the navigationBar and statusBar and leave float

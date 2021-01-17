@@ -11,13 +11,17 @@
         android:theme="@style/Theme.ChampeMix">
 
         <activity
-            android:name=".view.PickerSoundEffectActivity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:name=".view.SongPickerActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".view.SoundEffectPickerActivity"
+            android:screenOrientation="landscape" />
 
         <activity
             android:name=".view.MainActivity"
             android:screenOrientation="landscape">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
