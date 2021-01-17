@@ -44,6 +44,10 @@ class FragmentGeneralSettings : Fragment(), GeneralSettingPresenter.View{
             }
         }
 
+        binding.defaultSettingsButton.setOnClickListener {
+            generalSettingPresenter.deleteConfiguration(context!!)
+        }
+
         return binding.root
     }
 

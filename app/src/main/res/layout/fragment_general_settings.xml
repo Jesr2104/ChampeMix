@@ -18,7 +18,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:elevation="10dp"
             android:text="@string/settings"
             android:textAllCaps="true"
@@ -50,7 +50,8 @@
                 android:text="@string/save_keyboard_settings"
                 android:textColor="@color/color7"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/default_Settings_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,14 +59,29 @@
                 android:id="@+id/switchMaterial1"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginEnd="15dp"
                 android:checked="true"
                 android:theme="@style/Switch"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/option1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/option1"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/option1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/default_Settings_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/color7"
+                android:text="Default configuration"
+                android:textAllCaps="false"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/color4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/option1" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

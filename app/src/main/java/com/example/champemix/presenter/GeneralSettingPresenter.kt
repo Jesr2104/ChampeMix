@@ -2,9 +2,9 @@ package com.example.champemix.presenter
 
 import android.content.Context
 import android.widget.Toast
+import com.example.champemix.model.ConfigurationData
 import com.example.champemix.model.GeneralSetting
 import com.example.champemix.utility.GeneralSettingData
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class GeneralSettingPresenter {
 
@@ -29,6 +29,10 @@ class GeneralSettingPresenter {
 
         newConfig = configData!!
         view.loadData(newConfig)
+    }
+
+    fun deleteConfiguration(context: Context){
+        ConfigurationData().customPreference(context).deleteData(context)
     }
 
     fun changeSaveKeyboard(newValue: Boolean){
