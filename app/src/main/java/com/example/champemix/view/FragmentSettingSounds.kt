@@ -1,6 +1,7 @@
 package com.example.champemix.view
 
 import android.annotation.SuppressLint
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import com.example.champemix.databinding.FragmentSettingSoundsBinding
 import com.example.champemix.presenter.SettingButtonPresenter
+import com.example.champemix.utility.GetMetadata
 import com.example.champemix.utility.SoundButton
 
 class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
@@ -180,10 +182,93 @@ class FragmentSettingSounds : Fragment(), SettingButtonPresenter.View {
         binding.insertSoundButton1.setOnClickListener {
             val soundList = Intent(context, PickerSoundEffectActivity::class.java)
             soundList.putExtra("ButtonNumber", 1)
-            startActivity(soundList)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton2.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 2)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton3.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 3)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton4.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 4)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton5.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 5)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton6.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 6)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton7.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 7)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton8.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 8)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton9.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 9)
+            startActivityForResult(soundList,1)
+        }
+
+        binding.insertSoundButton10.setOnClickListener {
+            val soundList = Intent(context, PickerSoundEffectActivity::class.java)
+            soundList.putExtra("ButtonNumber", 10)
+            startActivityForResult(soundList,1)
         }
 
         return binding.root
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                val resultTemp = data!!.getBundleExtra("packetDataSoundEffect")
+                val soundNumberButton = resultTemp!!.get("ButtonNumber").toString()
+                val soundName = resultTemp.get("SoundEffectName").toString()
+
+                val idResource = context!!.resources.getIdentifier(soundName, "raw", context!!.packageName)
+
+                when(soundNumberButton){
+                    "1"->{binding.sampleNameButton1.text = GetMetadata().getTitle(context!!,idResource)}
+                    "2"->{binding.sampleNameButton2.text = GetMetadata().getTitle(context!!,idResource)}
+                    "3"->{binding.sampleNameButton3.text = GetMetadata().getTitle(context!!,idResource)}
+                    "4"->{binding.sampleNameButton4.text = GetMetadata().getTitle(context!!,idResource)}
+                    "5"->{binding.sampleNameButton5.text = GetMetadata().getTitle(context!!,idResource)}
+                    "6"->{binding.sampleNameButton6.text = GetMetadata().getTitle(context!!,idResource)}
+                    "7"->{binding.sampleNameButton7.text = GetMetadata().getTitle(context!!,idResource)}
+                    "8"->{binding.sampleNameButton8.text = GetMetadata().getTitle(context!!,idResource)}
+                    "9"->{binding.sampleNameButton9.text = GetMetadata().getTitle(context!!,idResource)}
+                    "10"->{binding.sampleNameButton10.text = GetMetadata().getTitle(context!!,idResource)}
+                }
+
+                settingButtonPresenter.resetResource(soundNumberButton, soundName)
+                settingButtonPresenter.edited()
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onDestroy() {

@@ -1,5 +1,6 @@
 package com.example.champemix.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +8,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.champemix.databinding.ActivityPickerSoundEffectBinding
 import com.example.champemix.presenter.PickerSoundEffectPresenter
 import com.example.champemix.presenter.adapter.RecycleViewAdapterSoundEffect
+import com.example.champemix.utility.LoadEffectSound
 
-class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresenter.View {
+class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresenter.View, LoadEffectSound {
 
     private var buttonNumber: Int = 0
     private val pickerSoundEffectPresenter = PickerSoundEffectPresenter()
@@ -38,7 +40,8 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
         binding.recyclerviewFields.layoutManager = GridLayoutManager(this,2)
         binding.recyclerviewFields.adapter = RecycleViewAdapterSoundEffect(
             applicationContext,
-            data
+            data,
+            this
         )
     }
 
@@ -52,5 +55,17 @@ class PickerSoundEffectActivity : AppCompatActivity(), PickerSoundEffectPresente
                             or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
         }
+    }
+
+    override fun loadData(songName: String) {
+        val infoToChangeSoundEffect = Bundle()
+        infoToChangeSoundEffect.putString("ButtonNumber","$buttonNumber")
+        infoToChangeSoundEffect.putString("SoundEffectName", songName)
+
+        val resultIntent = Intent()
+        resultIntent.putExtra("packetDataSoundEffect", infoToChangeSoundEffect)
+        setResult(RESULT_OK,resultIntent)
+
+        finish()
     }
 }

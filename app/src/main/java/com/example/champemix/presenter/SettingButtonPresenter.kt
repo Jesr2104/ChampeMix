@@ -3,11 +3,13 @@ package com.example.champemix.presenter
 import android.content.Context
 import android.widget.Toast
 import com.example.champemix.model.ConfigurationData
+import com.example.champemix.utility.GetMetadata
 import com.example.champemix.utility.SoundButton
 
 class SettingButtonPresenter {
 
     private var view: View? = null
+    private var context: Context? = null
     private var edited: Boolean = false
     private var dataSetting: ArrayList<SoundButton> = arrayListOf()
 
@@ -17,6 +19,7 @@ class SettingButtonPresenter {
 
     fun onCreate(view: View, context: Context){
         this.view = view
+        this.context = context
 
         // We read the configuration that is saved, if none is found, we will create one with the default configuration
         val data = ConfigurationData().customPreference(context).getList()!!
@@ -38,8 +41,10 @@ class SettingButtonPresenter {
         dataSetting[idButton].volume = newValue
     }
 
-    fun resetResource(idButton: Int, newValue: String){
-        //falta por definir sin funcionalidad
+    fun resetResource(idButton: String, newValue: String){
+        dataSetting[idButton.toInt() - 1].resource = newValue
+        val idResource = context!!.resources.getIdentifier(newValue, "raw", context!!.packageName)
+        dataSetting[idButton.toInt() - 1].titleSound = GetMetadata().getTitle(context!!,idResource)
     }
 
     fun onDestroy(context: Context) {
