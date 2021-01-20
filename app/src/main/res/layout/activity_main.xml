@@ -49,7 +49,8 @@
         android:backgroundTint="@color/color4"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/logoYB"
-        app:layout_constraintTop_toTopOf="@+id/logoXB" />
+        app:layout_constraintTop_toTopOf="@+id/logoXB"
+        android:visibility="gone"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/general_setting"
@@ -57,6 +58,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/color4"
         android:insetLeft="0dp"
         android:insetTop="0dp"
         android:insetRight="0dp"
@@ -65,10 +67,10 @@
         app:icon="@drawable/ic_settings"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
-        android:backgroundTint="@color/color4"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/logoXB" />
+        app:layout_constraintTop_toTopOf="@+id/logoXB"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/setting_button"
@@ -76,6 +78,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/color4"
         android:insetLeft="0dp"
         android:insetTop="0dp"
         android:insetRight="0dp"
@@ -84,10 +87,10 @@
         app:icon="@drawable/ic_tune"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
-        android:backgroundTint="@color/color4"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/general_setting"
-        app:layout_constraintTop_toTopOf="@+id/logoXB" />
+        app:layout_constraintTop_toTopOf="@+id/logoXB"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_exit"
@@ -240,18 +243,33 @@
         app:layout_constraintStart_toEndOf="@+id/value_volume"
         app:layout_constraintTop_toTopOf="@+id/value_volume"/>
 
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:paddingEnd="5dp"
+        android:src="@drawable/ic_insert_song"
+        app:layout_constraintBottom_toBottomOf="@+id/song_name"
+        app:layout_constraintEnd_toEndOf="@+id/song_name"
+        app:layout_constraintTop_toTopOf="@+id/song_name"
+        android:elevation="5dp"/>
+
     <TextView
         android:id="@+id/song_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/song_name"
+        app:layout_constraintWidth_percent="0.17"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/background_title_song"
+        android:ellipsize="end"
+        android:lines="1"
         android:padding="2dp"
         android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:background="@drawable/background_title_song"
-        android:textStyle="bold|italic"
+        android:paddingEnd="18dp"
+        android:text="@string/sample_name"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
         app:layout_constraintTop_toTopOf="parent" />
@@ -262,12 +280,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
+        android:indeterminate="false"
         android:progressDrawable="@drawable/track"
         android:thumb="@drawable/thumb"
-        android:indeterminate="false"
+        app:layout_constraintBottom_toTopOf="@+id/logoXB"
         app:layout_constraintEnd_toStartOf="@+id/volume_down"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@id/song_name"/>
+        app:layout_constraintTop_toBottomOf="@id/song_name" />
 
     <TextView
         android:id="@+id/current_position"
@@ -316,6 +335,7 @@
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:iconTint="@color/main_controls"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/seekBar" />

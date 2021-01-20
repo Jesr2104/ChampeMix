@@ -13,7 +13,6 @@ class MainPresenter {
     lateinit var playerSong: MyPlayerSong
 
     interface View {
-        fun dataSetting(configData: GeneralSettingData?)
         fun loadDuration(duration: Int)
         fun updateFinish()
     }
@@ -32,14 +31,14 @@ class MainPresenter {
         //      Check the general configurations to know is
         //      the app need to save configuration buttons or not
         //==================================================================================
-        if (!configData!!.saveKeyboard){
-            ConfigurationData().deleteData(context)
-        } // if the application don't need to save the configurations delete and
-          // load the configuration for default
+        if (configData != null){
+            if (!configData.saveKeyboard) {
+                ConfigurationData().deleteData(context)
+            }
+        }
+            // if the application don't need to save the configurations delete and
+            // load the configuration for default
         //==================================================================================
-
-        // send the information on the interface to load the theme
-        view.dataSetting(configData)
     }
 
     /**

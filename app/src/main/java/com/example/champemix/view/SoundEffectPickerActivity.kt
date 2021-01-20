@@ -1,12 +1,17 @@
 package com.example.champemix.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
+import android.content.res.Resources.Theme
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.champemix.R
 import com.example.champemix.databinding.ActivityPickerSoundEffectBinding
+import com.example.champemix.model.GeneralSetting
 import com.example.champemix.presenter.PickerSoundEffectPresenter
 import com.example.champemix.presenter.adapter.RecycleViewAdapterSoundEffect
 import com.example.champemix.utility.GeneralSettingData
@@ -19,6 +24,9 @@ class SoundEffectPickerActivity : AppCompatActivity(), PickerSoundEffectPresente
     lateinit var binding:ActivityPickerSoundEffectBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // check theme of the application and set the previous one
+        checkTheme(applicationContext)
+
         super.onCreate(savedInstanceState)
         binding = ActivityPickerSoundEffectBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -38,6 +46,17 @@ class SoundEffectPickerActivity : AppCompatActivity(), PickerSoundEffectPresente
         super.onDestroy()
     }
 
+    private fun checkTheme(context: Context) {
+        // check the general setting
+        val configData = GeneralSetting().customPreference(context).getData()
+
+        if (configData!!.Theme) {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
+        } else {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
+        }
+    }
+
     override fun loadData(data: ArrayList<String>) {
         binding.recyclerviewFields.layoutManager = GridLayoutManager(this,2)
         binding.recyclerviewFields.adapter = RecycleViewAdapterSoundEffect(
@@ -45,14 +64,6 @@ class SoundEffectPickerActivity : AppCompatActivity(), PickerSoundEffectPresente
             data,
             this
         )
-    }
-
-    override fun dataSetting(configData: GeneralSettingData?) {
-        if (configData!!.Theme) {
-            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
-        } else {
-            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
-        }
     }
 
     // function to hide the navigationBar and statusBar and leave float

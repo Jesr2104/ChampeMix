@@ -25,14 +25,13 @@
             app:layout_constraintBottom_toTopOf="@id/cardButton2"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -191,14 +190,13 @@
             app:layout_constraintTop_toBottomOf="@+id/cardButton1"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -355,14 +353,13 @@
             app:layout_constraintBottom_toTopOf="@id/cardButton4"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -519,14 +516,13 @@
             app:layout_constraintTop_toBottomOf="@+id/cardButton3"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -683,14 +679,13 @@
             app:layout_constraintBottom_toTopOf="@id/cardButton6"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -847,14 +842,13 @@
             app:layout_constraintTop_toBottomOf="@+id/cardButton5"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -1011,14 +1005,13 @@
             app:layout_constraintBottom_toTopOf="@id/cardButton8"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginBottom="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -1175,14 +1168,13 @@
             app:layout_constraintTop_toBottomOf="@+id/cardButton7"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -1335,8 +1327,6 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:backgroundTint="@color/color5"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"
@@ -1346,7 +1336,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cardButton7"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1">
+            app:layout_constraintVertical_weight="1"
+            android:layout_marginBottom="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -1505,14 +1496,13 @@
             app:layout_constraintTop_toBottomOf="@+id/cardButton9"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:clickable="true"
             android:focusable="true"
             android:checkable="true"
             android:backgroundTint="@color/color5"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_marginTop="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

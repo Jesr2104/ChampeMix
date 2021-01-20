@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.champemix.R
 import com.example.champemix.databinding.ActivityMainBinding
+import com.example.champemix.model.GeneralSetting
 import com.example.champemix.presenter.MainPresenter
-import com.example.champemix.utility.GeneralSettingData
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import kotlin.concurrent.schedule
@@ -41,8 +41,10 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        // check theme of the application and set the previous one
+        checkTheme(applicationContext)
 
+        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -181,12 +183,26 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        binding.insertSongButton.setOnClickListener {
+        binding.songName.setOnClickListener {
             val songPicker = Intent(this, SongPickerActivity::class.java)
             startActivity(songPicker)
         }
 
         //==================================================================================
+    }
+
+    // function to load theme of the application
+    private fun checkTheme(context: Context) {
+        // check the general setting
+        val configData = GeneralSetting().customPreference(context).getData()
+
+        if(configData != null) {
+            if (configData!!.Theme) {
+                delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
+            } else {
+                delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
+            }
+        }
     }
 
     // function to update the current volume on the app
@@ -209,15 +225,6 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
     private fun updateCurrentPosition() {
         if (mainPresenter.playerSong.isPlayer()) {
             handle.postDelayed(updateAction, 1000)
-        }
-    }
-
-    // function to load theme of the application
-    override fun dataSetting(configData: GeneralSettingData?) {
-        if (configData!!.Theme) {
-            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
-        } else {
-            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
         }
     }
 
