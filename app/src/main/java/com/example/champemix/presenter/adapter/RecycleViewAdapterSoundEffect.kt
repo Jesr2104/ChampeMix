@@ -2,8 +2,11 @@ package com.example.champemix.presenter.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.text.TextUtils
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.champemix.databinding.ItemSoundBinding
 import com.example.champemix.presenter.tools.MyPlayerSound
@@ -54,7 +57,7 @@ class RecycleViewAdapterSoundEffect(
             }
 
             binding.loadEffectSample.setOnClickListener {
-                view.loadData(soundEffect)
+                view.recycleViewControlEventSound(soundEffect)
             }
         }
 
@@ -67,6 +70,12 @@ class RecycleViewAdapterSoundEffect(
             val duration = format.format(duration.toFloat() / 1000.0)
 
             binding.titleSample.text = resource.replace('_',' ')
+            binding.titleSample.ellipsize = TextUtils.TruncateAt.MARQUEE
+            binding.titleSample.setHorizontallyScrolling(true)
+            binding.titleSample.marqueeRepeatLimit = -1
+            binding.titleSample.isSelected = true
+            binding.titleSample.isFocusable = true
+            binding.titleSample.isFocusableInTouchMode = true
             binding.DurationSample.text = "Duration: ${duration}s"
         }
     }

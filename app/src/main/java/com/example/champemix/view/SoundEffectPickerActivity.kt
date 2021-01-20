@@ -2,25 +2,21 @@ package com.example.champemix.view
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.content.res.Resources.Theme
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.champemix.R
 import com.example.champemix.databinding.ActivityPickerSoundEffectBinding
 import com.example.champemix.model.GeneralSetting
-import com.example.champemix.presenter.PickerSoundEffectPresenter
+import com.example.champemix.presenter.SoundEffectPickerPresenter
 import com.example.champemix.presenter.adapter.RecycleViewAdapterSoundEffect
-import com.example.champemix.utility.GeneralSettingData
 import com.example.champemix.utility.LoadEffectSound
 
-class SoundEffectPickerActivity : AppCompatActivity(), PickerSoundEffectPresenter.View, LoadEffectSound {
+class SoundEffectPickerActivity : AppCompatActivity(), SoundEffectPickerPresenter.View, LoadEffectSound {
 
     private var buttonNumber: Int = 0
-    private val pickerSoundEffectPresenter = PickerSoundEffectPresenter()
+    private val pickerSoundEffectPresenter = SoundEffectPickerPresenter()
     lateinit var binding:ActivityPickerSoundEffectBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +74,7 @@ class SoundEffectPickerActivity : AppCompatActivity(), PickerSoundEffectPresente
         }
     }
 
-    override fun loadData(songName: String) {
+    override fun recycleViewControlEventSound(songName: String) {
         val infoToChangeSoundEffect = Bundle()
         infoToChangeSoundEffect.putString("ButtonNumber","$buttonNumber")
         infoToChangeSoundEffect.putString("SoundEffectName", songName)

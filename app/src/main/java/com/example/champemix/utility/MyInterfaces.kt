@@ -1,5 +1,9 @@
 package com.example.champemix.utility
 
 interface LoadEffectSound {
-    fun loadData(songName: String)
+    fun recycleViewControlEventSound(songName: String)
+}
+
+interface LoadSong {
+    fun recycleViewControlEventSong(songName: String)
 }

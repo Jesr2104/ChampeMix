@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -19,6 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import kotlin.concurrent.schedule
 
+
 class MainActivity : AppCompatActivity(), MainPresenter.View {
 
     private var settingOn = false
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
     private var generalSetting = false
     private val mainPresenter = MainPresenter()
     private val handle: Handler = Handler()
+    private var idSong: Int = R.raw.music_ensename_a_olvidar
     lateinit var binding: ActivityMainBinding
 
     // update in real time for current duration and seek bar
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
         binding.play.setOnClickListener {
             if (!state) {
-                mainPresenter.playSong(applicationContext, R.raw.music_ensename_a_olvidar)
+                mainPresenter.playSong(applicationContext, idSong)
                 binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
                 updateCurrentPosition()
 
@@ -179,13 +182,14 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                     }
                 }
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
         binding.songName.setOnClickListener {
             val songPicker = Intent(this, SongPickerActivity::class.java)
-            startActivity(songPicker)
+            startActivityForResult(songPicker, 1)
         }
 
         //==================================================================================
@@ -260,6 +264,33 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                             or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
         }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                val resultTemp = data!!.getStringExtra("packetDataSong")
+                if (resultTemp != null){
+                    binding.songName.text = resultTemp
+
+                    if (state){
+                        handle.removeCallbacks(updateAction)
+                        mainPresenter.playerSong.stop()
+                        state = false
+                        binding.play.icon = resources.getDrawable(R.drawable.ic_play, theme)
+                        binding.seekBar.progress = 0
+                    }
+
+                    idSong = applicationContext.resources.getIdentifier(
+                        resultTemp,
+                        "raw",
+                        applicationContext!!.packageName
+                    )
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onDestroy() {

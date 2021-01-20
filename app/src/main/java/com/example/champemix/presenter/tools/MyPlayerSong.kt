@@ -16,6 +16,15 @@ class MyPlayerSong(context: Context, song: Int) {
         mPlayer.start()
     }
 
+    fun setNewSong(context: Context, idNewSong: Int){
+        if (mPlayer.isPlaying) {
+            mPlayer.stop()
+            mPlayer.release()
+            mPlayer = MediaPlayer.create(context, idNewSong)
+        }
+        mPlayer.start()
+    }
+
     fun getPlayer(): MediaPlayer {
        return mPlayer
     }
@@ -33,6 +42,11 @@ class MyPlayerSong(context: Context, song: Int) {
             position = currentPosition()
             mPlayer.pause()
         }
+    }
+
+    fun stop(){
+        mPlayer.stop()
+        mPlayer.release()
     }
 
     fun finishSong(){

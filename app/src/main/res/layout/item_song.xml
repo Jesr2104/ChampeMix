@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
+    android:backgroundTint="@color/color8"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="10dp"
-    android:backgroundTint="@color/color8">
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="5dp"
-        android:paddingTop="10dp"
         android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="5dp">
 
         <TextView
             android:id="@+id/titleSample"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="@string/sample_name"
             android:layout_marginEnd="10dp"
+            android:text="@string/sample_name"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold|italic"
@@ -35,8 +34,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent"
-            android:ellipsize="end"
-            android:lines="1">
+            android:singleLine="true"
+            android:textIsSelectable="true"
+            android:focusableInTouchMode="true">
 
         </TextView>
 
@@ -53,9 +53,9 @@
             android:id="@+id/PlaySample"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color4"
             android:src="@drawable/ic_play"
             android:tint="@color/white"
-            android:backgroundTint="@color/color4"
             app:layout_constraintBottom_toBottomOf="@+id/DurationSample"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -68,8 +68,8 @@
             android:id="@+id/DurationSample"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="normal"
@@ -85,10 +85,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:backgroundTint="@color/color4"
             android:text="@string/select_effect_sound"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:backgroundTint="@color/color4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

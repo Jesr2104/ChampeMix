@@ -35,8 +35,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent"
-            android:ellipsize="end"
-            android:lines="1">
+            android:singleLine="true"
+            android:textIsSelectable="true"
+            android:focusableInTouchMode="true">
 
         </TextView>
 
