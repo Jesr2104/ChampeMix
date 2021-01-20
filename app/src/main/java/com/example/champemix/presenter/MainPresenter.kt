@@ -11,7 +11,7 @@ import com.example.champemix.utility.GeneralSettingData
 class MainPresenter {
 
     private var view: View? = null
-    lateinit var playerSong: MyPlayerSong
+    var playerSong: MyPlayerSong? = null
 
     interface View {
         fun loadDuration(duration: Int)
@@ -74,15 +74,15 @@ class MainPresenter {
 
     fun playSong(context: Context, song: Int){
         playerSong = MyPlayerSong(context, song)
-        view!!.loadDuration(playerSong.duration())
-        playerSong.play()
+        view!!.loadDuration(playerSong!!.duration())
+        playerSong!!.play()
         finish()
     }
 
-    fun finish(){
-        playerSong.getPlayer().setOnCompletionListener {
+    private fun finish(){
+        playerSong!!.getPlayer().setOnCompletionListener {
             view!!.updateFinish()
-            playerSong.finishSong()
+            playerSong!!.finishSong()
         }
     }
 
@@ -102,6 +102,9 @@ class MainPresenter {
     }
 
     fun onDestroy() {
+        if (playerSong != null){
+            playerSong!!.onDestroy()
+        }
         this.view = null
     }
 }

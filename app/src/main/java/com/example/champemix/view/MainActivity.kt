@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         override fun run() {
             updateSeekBar()
             binding.currentPosition.text =
-                mainPresenter.formatDuration(mainPresenter.playerSong.currentPosition())
+                mainPresenter.formatDuration(mainPresenter.playerSong!!.currentPosition())
 
             handle.postDelayed(this, 1000)
         }
@@ -74,12 +73,12 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                 // this property gonna change when you change the song
                 state = true
             } else {
-                if (mainPresenter.playerSong.isPlayer()) {
-                    mainPresenter.playerSong.pause()
+                if (mainPresenter.playerSong!!.isPlaying()) {
+                    mainPresenter.playerSong!!.pause()
                     handle.removeCallbacks(updateAction)
                     binding.play.icon = resources.getDrawable(R.drawable.ic_play, theme)
                 } else {
-                    mainPresenter.playerSong.resume()
+                    mainPresenter.playerSong!!.resume()
                     updateCurrentPosition()
                     binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
                 }
@@ -88,13 +87,13 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
         binding.fastForward.setOnClickListener {
             if (state) {
-                mainPresenter.playerSong.forward()
+                mainPresenter.playerSong!!.forward()
             }
         }
 
         binding.fastRewind.setOnClickListener {
             if (state) {
-                mainPresenter.playerSong.rewind()
+                mainPresenter.playerSong!!.rewind()
             }
         }
 
@@ -173,12 +172,12 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
                 if (state) {
                     if (fromUser) {
                         val resultNewPosition =
-                            (progress.toFloat() / 100) * mainPresenter.playerSong.duration()
-                        mainPresenter.playerSong.setNewPositionPlayer(resultNewPosition.toInt())
+                            (progress.toFloat() / 100) * mainPresenter.playerSong!!.duration()
+                        mainPresenter.playerSong!!.setNewPositionPlayer(resultNewPosition.toInt())
 
                         //update the current time when the user move the seek bar
                         binding.currentPosition.text =
-                            mainPresenter.formatDuration(mainPresenter.playerSong.currentPosition())
+                            mainPresenter.formatDuration(mainPresenter.playerSong!!.currentPosition())
                     }
                 }
             }
@@ -201,7 +200,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         val configData = GeneralSetting().customPreference(context).getData()
 
         if(configData != null) {
-            if (configData!!.Theme) {
+            if (configData.Theme) {
                 delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
             } else {
                 delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
@@ -223,18 +222,18 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
     private fun updateSeekBar(){
         binding.seekBar.progress =
-            ((mainPresenter.playerSong.currentPosition().toFloat() / mainPresenter.playerSong.duration()) * 100).toInt()
+            ((mainPresenter.playerSong!!.currentPosition().toFloat() / mainPresenter.playerSong!!.duration()) * 100).toInt()
     }
 
     private fun updateCurrentPosition() {
-        if (mainPresenter.playerSong.isPlayer()) {
+        if (mainPresenter.playerSong!!.isPlaying()) {
             handle.postDelayed(updateAction, 1000)
         }
     }
 
     override fun loadDuration(duration: Int) {
         binding.durationSong.text =
-            mainPresenter.formatDuration(mainPresenter.playerSong.duration())
+            mainPresenter.formatDuration(mainPresenter.playerSong!!.duration())
     }
 
     @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
@@ -277,7 +276,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
                     if (state){
                         handle.removeCallbacks(updateAction)
-                        mainPresenter.playerSong.stop()
+                        mainPresenter.playerSong!!.stop()
                         state = false
                         binding.play.icon = resources.getDrawable(R.drawable.ic_play, theme)
                         binding.seekBar.progress = 0

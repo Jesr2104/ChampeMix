@@ -11,11 +11,15 @@ import com.example.champemix.databinding.ActivitySongPickerBinding
 import com.example.champemix.model.GeneralSetting
 import com.example.champemix.presenter.SongPickerPresenter
 import com.example.champemix.presenter.adapter.RecycleViewAdapterSong
+import com.example.champemix.presenter.tools.MyPlayerSong
 import com.example.champemix.utility.LoadSong
+import com.example.champemix.utility.PlayerSample
 
-class SongPickerActivity : AppCompatActivity(), SongPickerPresenter.View, LoadSong {
+class SongPickerActivity : AppCompatActivity(), SongPickerPresenter.View, LoadSong, PlayerSample {
 
     private var songPickerPresenter = SongPickerPresenter()
+    private var song: MyPlayerSong? = null
+    private var currentId = 0
     lateinit var binding: ActivitySongPickerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +55,7 @@ class SongPickerActivity : AppCompatActivity(), SongPickerPresenter.View, LoadSo
         binding.recyclerviewFields.adapter = RecycleViewAdapterSong(
             applicationContext,
             dataList,
+            this,
             this
         )
     }
@@ -75,9 +80,30 @@ class SongPickerActivity : AppCompatActivity(), SongPickerPresenter.View, LoadSo
         }
     }
 
+    override fun playSong(idResource: Int) {
+        if (currentId == 0){
+            song = MyPlayerSong(applicationContext, idResource)
+            song!!.play()
+            currentId = idResource
+        } else if (currentId == idResource){
+            if (song!!.isPlaying()){
+                song!!.pause()
+            } else {
+                song!!.play()
+            }
+        } else {
+            song!!.onDestroy()
+            song = MyPlayerSong(applicationContext, idResource)
+            song!!.play()
+            currentId = idResource
+        }
+    }
+
     override fun onDestroy() {
+        if (song != null){
+            song!!.onDestroy()
+        }
         songPickerPresenter.onDestroy()
         super.onDestroy()
     }
-
 }

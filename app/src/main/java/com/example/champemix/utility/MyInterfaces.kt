@@ -7,3 +7,11 @@ interface LoadEffectSound {
 interface LoadSong {
     fun recycleViewControlEventSong(songName: String)
 }
+
+interface PlayerSample{
+    fun playSong(idResource: Int)
+}
+
+interface UpdateIcon{
+    fun changeIcon()
+}

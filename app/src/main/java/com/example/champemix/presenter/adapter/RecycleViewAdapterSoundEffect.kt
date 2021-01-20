@@ -3,16 +3,18 @@ package com.example.champemix.presenter.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.text.TextUtils
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.champemix.R
 import com.example.champemix.databinding.ItemSoundBinding
 import com.example.champemix.presenter.tools.MyPlayerSound
 import com.example.champemix.utility.GetMetadata
 import com.example.champemix.utility.LoadEffectSound
 import java.text.DecimalFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.concurrent.schedule
 
 class RecycleViewAdapterSoundEffect(
     private val context: Context,
@@ -40,7 +42,7 @@ class RecycleViewAdapterSoundEffect(
         val duration = GetMetadata().getDuration(context,idResource)
 
         holder.bind(soundEffectName,duration)
-        holder.clickListener(context, idResource, view, soundEffectName)
+        holder.clickListener(context, idResource, view, soundEffectName, duration)
     }
 
     class ViewHolder(private val binding: ItemSoundBinding) :
@@ -50,9 +52,15 @@ class RecycleViewAdapterSoundEffect(
             context: Context,
             idResource: Int,
             view: LoadEffectSound,
-            soundEffect: String
+            soundEffect: String,
+            duration: Int
         ){
             binding.PlaySample.setOnClickListener {
+
+                binding.PlaySample.setImageResource(R.drawable.ic_pause)
+                Timer().schedule(duration.toLong()) {
+                    binding.PlaySample.setImageResource(R.drawable.ic_play)
+                }
                 MyPlayerSound().playSound(idResource, context,1f)
             }
 

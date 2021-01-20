@@ -6,18 +6,23 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.champemix.R
 import com.example.champemix.databinding.ItemSongBinding
-import com.example.champemix.presenter.tools.MyPlayerSound
 import com.example.champemix.utility.GetMetadata
 import com.example.champemix.utility.LoadSong
+import com.example.champemix.utility.PlayerSample
 import java.text.DecimalFormat
 
 class RecycleViewAdapterSong(
     private val context: Context,
     private val listData: ArrayList<String>,
-    private val view: LoadSong
-):
+    private val view: LoadSong,
+    private val playerSong: PlayerSample
+) :
     RecyclerView.Adapter<RecycleViewAdapterSong.ViewHolder>() {
+
+    var isPlaying = false
+    var currentPlayingPosition = -1
 
     override fun getItemCount() = listData.size
 
@@ -35,25 +40,47 @@ class RecycleViewAdapterSong(
         val songName = listData[position]
 
         val idResource = context.resources.getIdentifier(songName, "raw", context.packageName)
-        val duration = GetMetadata().getDuration(context,idResource)
+        val duration = GetMetadata().getDuration(context, idResource)
 
-        holder.bind(songName,duration)
-        holder.clickListener(context, idResource, view, songName)
+        holder.bind(songName, duration)
+
+        if (position != currentPlayingPosition){
+            holder.getBinding().PlaySample.setImageResource(R.drawable.ic_play)
+        }
+
+        holder.getBinding().PlaySample.setOnClickListener {
+            playerSong.playSong(idResource)
+
+            if (currentPlayingPosition == -1){
+                holder.getBinding().PlaySample.setImageResource(R.drawable.ic_pause)
+                isPlaying = true
+            } else if (currentPlayingPosition == position) {
+                if (isPlaying){
+                    holder.getBinding().PlaySample.setImageResource(R.drawable.ic_play)
+                    isPlaying = false
+                } else {
+                    holder.getBinding().PlaySample.setImageResource(R.drawable.ic_pause)
+                    isPlaying = true
+                }
+            } else {
+                holder.getBinding().PlaySample.setImageResource(R.drawable.ic_pause)
+                isPlaying = true
+            }
+
+
+            currentPlayingPosition = position
+            notifyDataSetChanged()
+        }
+        holder.clickListener(view, songName)
+
     }
 
     class ViewHolder(private val binding: ItemSongBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun clickListener(
-            context: Context,
-            idResource: Int,
-            view: LoadSong,
-            songName: String
-        ){
-            binding.PlaySample.setOnClickListener {
-                MyPlayerSound().playSound(idResource, context,1f)
-            }
+        fun getBinding() = binding
 
+        fun clickListener(view: LoadSong,songName: String) {
             binding.loadEffectSample.setOnClickListener {
                 view.recycleViewControlEventSong(songName)
             }
@@ -67,7 +94,7 @@ class RecycleViewAdapterSong(
 
             val duration = format.format(duration.toFloat() / 1000.0)
 
-            binding.titleSample.text = resource.replace('_',' ')
+            binding.titleSample.text = resource.replace('_', ' ')
             binding.titleSample.ellipsize = TextUtils.TruncateAt.MARQUEE
             binding.titleSample.setHorizontallyScrolling(true)
             binding.titleSample.marqueeRepeatLimit = -1

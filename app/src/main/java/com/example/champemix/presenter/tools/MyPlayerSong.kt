@@ -16,15 +16,6 @@ class MyPlayerSong(context: Context, song: Int) {
         mPlayer.start()
     }
 
-    fun setNewSong(context: Context, idNewSong: Int){
-        if (mPlayer.isPlaying) {
-            mPlayer.stop()
-            mPlayer.release()
-            mPlayer = MediaPlayer.create(context, idNewSong)
-        }
-        mPlayer.start()
-    }
-
     fun getPlayer(): MediaPlayer {
        return mPlayer
     }
@@ -54,7 +45,7 @@ class MyPlayerSong(context: Context, song: Int) {
         mPlayer.stop()
     }
 
-    fun isPlayer(): Boolean {
+    fun isPlaying(): Boolean {
         return mPlayer.isPlaying
     }
 
@@ -95,6 +86,7 @@ class MyPlayerSong(context: Context, song: Int) {
     }
 
     fun onDestroy() {
+        mPlayer.stop()
         mPlayer.reset()
         mPlayer.release()
     }
