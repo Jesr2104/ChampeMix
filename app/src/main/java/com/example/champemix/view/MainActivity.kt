@@ -272,7 +272,8 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
             if (resultCode == RESULT_OK) {
                 val resultTemp = data!!.getStringExtra("packetDataSong")
                 if (resultTemp != null){
-                    binding.songName.text = resultTemp
+                    // to delete the _ on the name of the name file
+                    binding.songName.text = resultTemp.replace('_',' ')
 
                     if (state){
                         handle.removeCallbacks(updateAction)

@@ -42,4 +42,5 @@
     <string name="load">Load</string>
     <string name="select_effect_sound">Select Effect</string>
     <string name="sound_effect_list">Effect List</string>
+    <string name="select_song">Select Song</string>
 </resources>

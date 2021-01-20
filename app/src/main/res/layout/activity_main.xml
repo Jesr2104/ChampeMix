@@ -251,28 +251,33 @@
         app:layout_constraintBottom_toBottomOf="@+id/song_name"
         app:layout_constraintEnd_toEndOf="@+id/song_name"
         app:layout_constraintTop_toTopOf="@+id/song_name"
-        android:elevation="5dp"/>
+        android:elevation="5dp"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/song_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintWidth_percent="0.17"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="7dp"
         android:background="@drawable/background_title_song"
-        android:ellipsize="end"
-        android:lines="1"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
         android:padding="2dp"
         android:paddingStart="5dp"
         android:paddingEnd="18dp"
-        android:text="@string/sample_name"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/select_song"
         android:textColor="@color/white"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.17" />
 
     <SeekBar
         android:id="@+id/seekBar"
