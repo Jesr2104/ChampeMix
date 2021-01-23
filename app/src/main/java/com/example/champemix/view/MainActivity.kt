@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
     private var generalSetting = false
     private val mainPresenter = MainPresenter()
     private val handle: Handler = Handler()
-    private var idSong: Int = R.raw.music_ensename_a_olvidar
+    private var idSong: Int = -1
     lateinit var binding: ActivityMainBinding
 
     // update in real time for current duration and seek bar
@@ -65,13 +66,24 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         //==================================================================================
 
         binding.play.setOnClickListener {
-            if (!state) {
-                mainPresenter.playSong(applicationContext, idSong)
-                binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
-                updateCurrentPosition()
 
-                // this property gonna change when you change the song
-                state = true
+            binding.play.iconTint = getColorStateList(R.color.color7)
+
+            Timer().schedule(200) {
+                binding.play.iconTint = getColorStateList(R.color.main_controls)
+            }
+
+            if (!state) {
+                if (idSong > 0){
+                    mainPresenter.playSong(applicationContext, idSong)
+                    binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
+                    updateCurrentPosition()
+
+                    // this property gonna change when you change the song
+                    state = true
+                } else {
+                    Toast.makeText(this, getString(R.string.ms_select_song), Toast.LENGTH_SHORT).show()
+                }
             } else {
                 if (mainPresenter.playerSong!!.isPlaying()) {
                     mainPresenter.playerSong!!.pause()
@@ -86,14 +98,30 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         }
 
         binding.fastForward.setOnClickListener {
+
+            binding.fastForward.iconTint = getColorStateList(R.color.color7)
+
+            Timer().schedule(200) {
+                binding.fastForward.iconTint = getColorStateList(R.color.main_controls)
+            }
+
             if (state) {
                 mainPresenter.playerSong!!.forward()
+                binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
             }
         }
 
         binding.fastRewind.setOnClickListener {
+
+            binding.fastRewind.iconTint = getColorStateList(R.color.color7)
+
+            Timer().schedule(200) {
+                binding.fastRewind.iconTint = getColorStateList(R.color.main_controls)
+            }
+
             if (state) {
                 mainPresenter.playerSong!!.rewind()
+                binding.play.icon = resources.getDrawable(R.drawable.ic_pause, theme)
             }
         }
 
@@ -129,11 +157,11 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 
         binding.volumeUp.setOnClickListener {
 
-            binding.volumeUp.iconTint = getColorStateList(R.color.color5)
+            binding.volumeUp.iconTint = getColorStateList(R.color.color7)
 
             mainPresenter.raiseVolume(applicationContext)
 
-            Timer().schedule(100) {
+            Timer().schedule(200) {
                 binding.volumeUp.iconTint = getColorStateList(R.color.main_controls)
             }
 
@@ -141,11 +169,11 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         }
 
         binding.volumeDown.setOnClickListener {
-            binding.volumeDown.iconTint = getColorStateList(R.color.color5)
+            binding.volumeDown.iconTint = getColorStateList(R.color.color7)
 
             mainPresenter.lowerVolume(applicationContext)
 
-            Timer().schedule(100) {
+            Timer().schedule(200) {
                 binding.volumeDown.iconTint = getColorStateList(R.color.main_controls)
             }
 
@@ -187,8 +215,15 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         })
 
         binding.songName.setOnClickListener {
+
+            binding.songName.setTextColor(getColorStateList(R.color.color3))
+
             val songPicker = Intent(this, SongPickerActivity::class.java)
             startActivityForResult(songPicker, 1)
+
+            Timer().schedule(100) {
+                binding.songName.setTextColor(getColorStateList(R.color.white))
+            }
         }
 
         //==================================================================================

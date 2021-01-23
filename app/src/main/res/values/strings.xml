@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChampeMix</string>
+    <string name="app_name">Champe Mix</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_menu">MenuActivity</string>
@@ -43,4 +43,5 @@
     <string name="select_effect_sound">Select Effect</string>
     <string name="sound_effect_list">Effect List</string>
     <string name="select_song">Select Song</string>
+    <string name="ms_select_song">First select a song</string>
 </resources>
