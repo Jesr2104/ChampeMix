@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.champemix">
+    package="com.just_jump.champemix">
 
     <application
         android:allowBackup="true"
@@ -11,15 +11,15 @@
         android:theme="@style/Theme.ChampeMix">
 
         <activity
-            android:name=".view.SongPickerActivity"
+            android:name="com.just_jump.champemix.view.SongPickerActivity"
             android:screenOrientation="landscape" />
 
         <activity
-            android:name=".view.SoundEffectPickerActivity"
+            android:name="com.just_jump.champemix.view.SoundEffectPickerActivity"
             android:screenOrientation="landscape" />
 
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.just_jump.champemix.view.MainActivity"
             android:screenOrientation="landscape">
 
             <intent-filter>
