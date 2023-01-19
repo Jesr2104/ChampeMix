@@ -15,3 +15,17 @@ This application is a digital piano specifically designed for playing Champeta, 
 | MVP             | Architectural pattern used to organize the code and separation of concerns in the app       |
 
 
+# Graphic elements
+
+<img src="https://github.com/Jesr2104/ChampeMix/blob/c140d026d53d39542a80351988ab434026cd378e/resource/champe-mix.png">
+
+**Home screen**: This screen would serve as the main menu of the app and would allow users to navigate to different sections of the app, such as the piano keyboard, the song library, and settings. It could also include a banner or carousel of featured songs, and a button to play or pause the current song.
+
+**Piano keyboard screen**: This screen would display the virtual piano keyboard where users can play and record songs. It could include options to adjust the instrument's sound, change the octave, and access different piano modes such as single or multi touch.
+
+**Song library screen**: This screen would allow users to browse and select different songs to play, with the ability to sort songs by artist, album, or popularity. Users could also create and save their own custom songs, and share them with other users.
+
+**Settings screen**: This screen would allow users to customize the app's settings, such as adjusting the volume, enabling or disabling background music, and selecting a preferred language. Users could also access a help center or contact support for assistance with the app.
+
+
+
